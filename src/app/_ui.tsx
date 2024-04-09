@@ -43,7 +43,7 @@ export default function Ui() {
   return (
     <>
       <ConnectKitButton />
-      <div className="dropdown mt-3 w-[200px]">
+      <div className="dropdown mt-3 mb-8 w-[200px]">
         <div tabIndex={0} role="button" className="btn m-1 w-full">
           <div className="w-full grid grid-cols-1-4-1 items-center">
             <Image
@@ -117,10 +117,12 @@ export default function Ui() {
           ))}
         </ul>
       </div>
-      <div className="card w-96 bg-base-100 shadow-xl my-3">
+      <div className="card w-96 bg-base-100 shadow-xl mb-3">
         <div className="card-body">
-          <h2 className="card-title">Wrap {balance.data?.symbol}</h2>
-          <p>
+          <h2 className="card-title mb-6 w-full text-center block">
+            Wrap {balance.data?.symbol}
+          </h2>
+          <p className="hidden">
             Wrap {balance.data?.symbol || "ETH"} to W
             {balance.data?.symbol || "ETH"}
           </p>
@@ -130,7 +132,7 @@ export default function Ui() {
             className="input input-bordered"
             placeholder={formattedBalance}
           />
-          <div className="join">
+          <div className="join mt-2">
             <button
               onClick={() =>
                 setInputEthAmount(
@@ -139,7 +141,7 @@ export default function Ui() {
                   ).toString()
                 )
               }
-              className="btn join-item w-1/3"
+              className="btn btn-accent btn-outline join-item w-1/3"
             >
               25%
             </button>
@@ -151,7 +153,7 @@ export default function Ui() {
                   ).toString()
                 )
               }
-              className="btn join-item w-1/3"
+              className="btn btn-accent btn-outline join-item w-1/3"
             >
               50%
             </button>
@@ -163,7 +165,7 @@ export default function Ui() {
                   ).toString()
                 )
               }
-              className="btn join-item w-1/3"
+              className="btn btn-accent btn-outline join-item w-1/3"
             >
               100%
             </button>
@@ -171,16 +173,34 @@ export default function Ui() {
           <button
             onClick={() => handleWriteWrap()}
             disabled={!inputEthAmount}
-            className="btn btn-primary"
+            className="btn mt-6 btn-primary border-2 border-primary hover:border-base-100 hover:ring-2 hover:ring-primary"
           >
             Wrap
           </button>
         </div>
       </div>
-      <div className="card w-96 bg-base-100 shadow-xl">
+
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        strokeWidth={1.5}
+        stroke="currentColor"
+        className="w-12 h-12 my-3 text-primary"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M3 7.5 7.5 3m0 0L12 7.5M7.5 3v13.5m13.5 0L16.5 21m0 0L12 16.5m4.5 4.5V7.5"
+        />
+      </svg>
+
+      <div className="card w-96 bg-base-100 shadow-xl my-3">
         <div className="card-body">
-          <h2 className="card-title">Unwrap {balance.data?.symbol || "ETH"}</h2>
-          <p>
+          <h2 className="card-title mb-6 w-full text-center block">
+            Unwrap {balance.data?.symbol || "ETH"}
+          </h2>
+          <p className="hidden">
             Unwrap W{balance.data?.symbol || "ETH"} to{" "}
             {balance.data?.symbol || "ETH"}
           </p>
@@ -190,7 +210,7 @@ export default function Ui() {
             className="input input-bordered"
             placeholder={formattedWethBalance}
           />
-          <div className="join">
+          <div className="join mt-2">
             <button
               onClick={() =>
                 setInputWethAmount(
@@ -199,7 +219,7 @@ export default function Ui() {
                   ).toString()
                 )
               }
-              className="btn join-item w-1/3"
+              className="btn btn-accent btn-outline join-item w-1/3"
             >
               25%
             </button>
@@ -211,7 +231,7 @@ export default function Ui() {
                   ).toString()
                 )
               }
-              className="btn join-item w-1/3"
+              className="btn btn-accent btn-outline join-item w-1/3"
             >
               50%
             </button>
@@ -221,7 +241,7 @@ export default function Ui() {
                   Number(formatEther(wethBalance.data || BigInt(0))).toString()
                 )
               }
-              className="btn join-item w-1/3"
+              className="btn btn-accent btn-outline join-item w-1/3"
             >
               100%
             </button>
@@ -229,7 +249,7 @@ export default function Ui() {
           <button
             onClick={handleWriteUnwrap}
             disabled={!inputWethAmount}
-            className="btn btn-primary"
+            className="btn mt-6 btn-primary border-2 border-primary hover:border-base-100 hover:ring-2 hover:ring-primary"
           >
             Unwrap
           </button>
