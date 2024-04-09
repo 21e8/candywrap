@@ -48,3 +48,25 @@ export const SUPPORTED_CHAINS = [
   bsc,
   degen,
 ] as const;
+export const SUPPORTED_CHAIN_IDS = SUPPORTED_CHAINS.map((chain) => chain.id) as number[];
+export const LOGOS: Record<number, string> = {
+  [avalanche.id]: "https://icons.llamao.fi/icons/chains/rsz_avalanche.jpg",
+  [base.id]: "https://icons.llamao.fi/icons/chains/rsz_base.jpg",
+  [blast.id]: "https://icons.llamao.fi/icons/chains/rsz_blast.jpg",
+  [bsc.id]: "https://icons.llamao.fi/icons/chains/rsz_bsc.jpg",
+  [degen.id]: "https://icons.llamao.fi/icons/chains/rsz_degen.jpg",
+  [mainnet.id]: "https://icons.llamao.fi/icons/chains/rsz_ethereum.jpg",
+  [optimism.id]: "https://icons.llamao.fi/icons/chains/rsz_optimism.jpg",
+  [polygon.id]: "https://icons.llamao.fi/icons/chains/rsz_polygon.jpg",
+}
+
+export const SYMBOLS: Record<number, string> = {
+  [mainnet.id]: mainnet.nativeCurrency.symbol,
+  [blast.id]: blast.nativeCurrency.symbol,
+  [optimism.id]: optimism.nativeCurrency.symbol,
+  [polygon.id]: polygon.nativeCurrency.symbol,
+  [avalanche.id]: avalanche.nativeCurrency.symbol,
+  [base.id]: base.nativeCurrency.symbol,
+  [bsc.id]: bsc.nativeCurrency.symbol,
+  [degen.id]: degen.nativeCurrency.symbol,
+};
