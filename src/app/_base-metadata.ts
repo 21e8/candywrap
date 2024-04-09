@@ -15,6 +15,7 @@ export const BASE_METADATA = {
     "eth",
     "erc20",
     "ethereum",
+    'smart contract',
     'wrapeth',
     'optimism',
     'arbitrum',
