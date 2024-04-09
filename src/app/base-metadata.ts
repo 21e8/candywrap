@@ -23,6 +23,11 @@ export const BASE_METADATA = {
     'avalanche',
     'degen',
     'chain',
+    'avax',
+    'matic',
+    'bnb',
+    'binance',
+    'smartchain',
   ],
   title: "CandyWrap",
   description:
