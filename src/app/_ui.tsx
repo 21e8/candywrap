@@ -117,7 +117,7 @@ export default function Ui({ chain }: { chain: string }) {
           ))}
         </ul>
       </div>
-      <div className="card w-96 bg-base-100 shadow-xl mb-3">
+      <div className="card max-w-96 w-full bg-base-100 shadow-xl mb-3">
         <div className="card-body">
           <h2 className="card-title mb-6 w-full text-center block">
             Wrap {balance.data?.symbol || SYMBOLS[IDS[chain]] || "ETH"}
@@ -195,7 +195,7 @@ export default function Ui({ chain }: { chain: string }) {
         />
       </svg>
 
-      <div className="card w-96 bg-base-100 shadow-xl my-3">
+      <div className="card max-w-96 w-full bg-base-100 shadow-xl mt-3 mb-24">
         <div className="card-body">
           <h2 className="card-title mb-6 w-full text-center block">
             Unwrap {balance.data?.symbol || SYMBOLS[IDS[chain]] || "ETH"}
