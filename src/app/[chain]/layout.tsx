@@ -17,7 +17,7 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   const { chain } = params;
   const symb = SYMBOLS[IDS[chain]] || "ETH";
-  const description = `Easily wrap and unwrap your ${symb} or W${symb} in a few clicks right from your wallet. Supports multiple chains. Swap now on ${
+  const description = `Easily wrap and unwrap your ${symb} or W${symb} in a few clicks right from your wallet. Supports multiple chains. Instead of swapping for a high fee use this instead. Convert now on ${
     NAMES[IDS[chain]]
   }!`;
   return {
