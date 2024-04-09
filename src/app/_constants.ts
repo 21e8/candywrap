@@ -1,4 +1,4 @@
-import { Address } from "viem";
+import { Abi, Address } from "viem";
 import {
   avalanche,
   base,
@@ -12,6 +12,7 @@ import {
   optimism,
   polygon,
 } from "viem/chains";
+import { WETH_MAINNET_ABI, WETH_BLAST_ABI, WETH_OP_ABI, WMATIC_POLYGON_ABI, WAVAX_AVAX_ABI, WETH_BASE_ABI, WBNB_BSC_ABI, WDEGEN_DEGEN_ABI } from "./_abis";
 
 export const WETH_BLAST_ADDRESS: Address =
   "0x4300000000000000000000000000000000000004";
@@ -117,6 +118,20 @@ export const CHAINS: Record<string, any> = {
   filecoin: filecoin,
   fuse: fuse,
   fantom: fantom,
+};
+
+export const WETH_ABIS: Record<string, Abi> = {
+  [mainnet.id]: WETH_MAINNET_ABI,
+  [blast.id]: WETH_BLAST_ABI,
+  [optimism.id]: WETH_OP_ABI,
+  [polygon.id]: WMATIC_POLYGON_ABI,
+  [avalanche.id]: WAVAX_AVAX_ABI,
+  [base.id]: WETH_BASE_ABI,
+  [bsc.id]: WBNB_BSC_ABI,
+  [degen.id]: WDEGEN_DEGEN_ABI,
+  [filecoin.id]: WDEGEN_DEGEN_ABI,
+  [fuse.id]: WDEGEN_DEGEN_ABI,
+  [fantom.id]: WDEGEN_DEGEN_ABI,
 };
 
 export const IDS: Record<string, number> = {

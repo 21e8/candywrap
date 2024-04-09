@@ -1794,16 +1794,3 @@ export const WDEGEN_DEGEN_ABI = [
   },
 ] as const;
 
-export const WETH_ABIS: Record<string, Abi> = {
-  [mainnet.id]: WETH_MAINNET_ABI,
-  [blast.id]: WETH_BLAST_ABI,
-  [optimism.id]: WETH_OP_ABI,
-  [polygon.id]: WMATIC_POLYGON_ABI,
-  [avalanche.id]: WAVAX_AVAX_ABI,
-  [base.id]: WETH_BASE_ABI,
-  [bsc.id]: WBNB_BSC_ABI,
-  [degen.id]: WDEGEN_DEGEN_ABI,
-  [filecoin.id]: WDEGEN_DEGEN_ABI,
-  [fuse.id]: WDEGEN_DEGEN_ABI,
-  [fantom.id]: WDEGEN_DEGEN_ABI,
-};

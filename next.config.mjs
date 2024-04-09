@@ -6,6 +6,11 @@ const nextConfig = {
   redirects: async () => {
     return [
       {
+        source: "/mainnet",
+        destination: "/ethereum",
+        permanent: true,
+      },
+      {
         source: "/",
         destination: "/ethereum",
         permanent: true,

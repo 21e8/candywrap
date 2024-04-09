@@ -6,8 +6,7 @@ import {
   useWaitForTransactionReceipt,
   useWriteContract,
 } from "wagmi";
-import { SUPPORTED_CHAIN_IDS, WETH_ADDRESSES } from "./_constants";
-import { WETH_ABIS } from "./_abis";
+import { SUPPORTED_CHAIN_IDS, WETH_ABIS, WETH_ADDRESSES } from "./_constants";
 import { useEffect } from "react";
 import { TypedContractRead } from "@/types/typed-contract-read";
 
@@ -74,8 +73,6 @@ export function useWriteWrapWeth({ amountWei }: { amountWei: bigint }) {
   const { isLoading, isSuccess, isLoadingError } = useWaitForTransactionReceipt(
     { hash }
   );
-
-  console.log({ hash, isPending, isSuccess, isLoading, isLoadingError, error, failureReason })
 
   function handleWrite() {
     if (!SUPPORTED_CHAIN_IDS.includes(chainId)) {
