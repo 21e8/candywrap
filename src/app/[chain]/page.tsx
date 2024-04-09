@@ -16,7 +16,7 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   const { chain } = params;
   const symb = SYMBOLS[IDS[chain]];
-  const description = `Wrap and unwrap your ${symb}/W${symb} in a few clicks right from your wallet. Supports multiple chains.`;
+  const description = `Wrap and unwrap your ${symb}/W${symb} in a few clicks right from your wallet. Supports multiple chains. Swap now on ${NAMES[IDS[chain]]}!`;
   return {
     title: "CandyWrap",
     description,

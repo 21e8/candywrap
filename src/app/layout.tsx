@@ -6,7 +6,7 @@ import { Providers } from "./_providers";
 const inter = Inter({ subsets: ["latin"] });
 const title = "CandyWrap";
 const description =
-  "Wrap and unwrap your ETH/WETH in a few clicks right from your wallet. Supports multiple chains.";
+  "Wrap and unwrap your ETH/WETH in a few clicks right from your wallet. Supports multiple chains. Swap now on Ethereum!";
 export const metadata: Metadata = {
   title: title,
   description,
