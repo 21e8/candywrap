@@ -20,6 +20,19 @@ export const metadata: Metadata = {
     description,
     creator: "@thereal0xalice",
   },
+  authors: [{ name: "0xAlice" }],
+  category: "Finance",
+  creator: "0xAlice",
+  keywords: [
+    "wrap",
+    "unwrap",
+    "token",
+    "exchange",
+    "defi",
+    "candywrap",
+    "candy",
+    "swap",
+  ],
 };
 
 export default function RootLayout({
