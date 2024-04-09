@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { BASE_METADATA } from "../_base-metadata";
+import { NAMES } from "../_constants";
 
 export const metadata: Metadata = {
   ...BASE_METADATA,
@@ -14,6 +15,9 @@ export const metadata: Metadata = {
     creator: "@thereal0xalice",
   },
 };
+export async function generateStaticParams() {
+  return Object.values(NAMES).map((name) => ({ chain: name }));
+}
 
 export default function RootLayout({
   children,
