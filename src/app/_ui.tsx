@@ -7,7 +7,7 @@ import {
   useChains,
   useSwitchChain,
 } from "wagmi";
-import { IDS, LOGOS, NAMES, SUPPORTED_CHAINS, SYMBOLS } from "./_constants";
+import { IDS, LOGOS, CHAIN_IDS, SUPPORTED_CHAINS, SYMBOLS } from "./_constants";
 import { formatEther, parseEther } from "viem";
 import { useWethBalance, useWriteUnwrapWeth, useWriteWrapWeth } from "./_hooks";
 import { useEffect, useState } from "react";
@@ -35,8 +35,8 @@ export default function Ui({ chain }: { chain: string }) {
   const pathname = usePathname();
   const router = useRouter();
   useEffect(() => {
-    if (pathname !== `/${NAMES[chainId]}`) {
-      router.push(`/${NAMES[chainId]}`);
+    if (pathname !== `/${CHAIN_IDS[chainId]}`) {
+      router.push(`/${CHAIN_IDS[chainId]}`);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [chainId, pathname]);

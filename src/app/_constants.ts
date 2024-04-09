@@ -93,6 +93,20 @@ export const SYMBOLS: Record<number, string> = {
 };
 
 export const NAMES: Record<number, string> = {
+  [blast.id]: blast.name,
+  [base.id]: base.name,
+  [polygon.id]: polygon.name,
+  [bsc.id]: bsc.name,
+  [degen.id]: degen.name,
+  [mainnet.id]: mainnet.name,
+  [optimism.id]: optimism.name,
+  [avalanche.id]: avalanche.name,
+  [filecoin.id]: filecoin.name,
+  [fuse.id]: fuse.name,
+  [fantom.id]: fantom.name,
+};
+
+export const CHAIN_IDS: Record<number, string> = {
   [blast.id]: "blast",
   [base.id]: "base",
   [polygon.id]: "polygon",

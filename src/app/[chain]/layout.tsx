@@ -1,6 +1,6 @@
 import type { Metadata, ResolvingMetadata } from "next";
 import { BASE_METADATA } from "../_base-metadata";
-import { IDS, NAMES, SYMBOLS } from "../_constants";
+import { IDS, CHAIN_IDS, SYMBOLS, NAMES } from "../_constants";
 
 type Props = {
   params: { chain: string };
@@ -9,7 +9,7 @@ type Props = {
 export const config = {
   author: "0xAlice",
   githubRepo: "https://github.com/21e8/candywrap",
-  twitter: "https://twitter.com/thereal0xalice"
+  twitter: "https://twitter.com/thereal0xalice",
 };
 export async function generateMetadata(
   { params }: Props,
@@ -38,7 +38,7 @@ export async function generateMetadata(
 }
 
 export async function generateStaticParams() {
-  return Object.values(NAMES).map((name) => ({ chain: name }));
+  return Object.values(CHAIN_IDS).map((name) => ({ chain: name }));
 }
 
 export default function RootLayout({
