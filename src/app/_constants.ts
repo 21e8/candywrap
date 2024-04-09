@@ -70,3 +70,36 @@ export const SYMBOLS: Record<number, string> = {
   [bsc.id]: bsc.nativeCurrency.symbol,
   [degen.id]: degen.nativeCurrency.symbol,
 };
+
+export const NAMES: Record<number, string> = {
+  [blast.id]: "blast",
+  [base.id]: "base",
+  [polygon.id]: "polygon",
+  [bsc.id]: "bsc",
+  [degen.id]: "degen",
+  [mainnet.id]: "mainnet",
+  [optimism.id]: "optimism",
+  [avalanche.id]: "avalanche",
+};
+
+export const CHAINS: Record<string, any> = {
+  blast: blast,
+  base: base,
+  polygon: polygon,
+  bsc: bsc,
+  degen: degen,
+  mainnet: mainnet,
+  optimism: optimism,
+  avalanche: avalanche,
+};
+
+export const IDS: Record<string, number> = {
+  blast: blast.id,
+  base: base.id,
+  polygon: polygon.id,
+  bsc: bsc.id,
+  degen: degen.id,
+  mainnet: mainnet.id,
+  optimism: optimism.id,
+  avalanche: avalanche.id,
+};

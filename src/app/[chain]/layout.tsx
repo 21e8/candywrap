@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "WrapEth",
+  title: "CandyWrap",
   description: "Wrap and unwrap your ETH/WETH",
 };
 

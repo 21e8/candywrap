@@ -1,44 +1,13 @@
 import { Metadata, ResolvingMetadata } from "next";
-import {
-  avalanche,
-  base,
-  blast,
-  bsc,
-  degen,
-  mainnet,
-  optimism,
-  polygon,
-} from "viem/chains";
 import Ui from "../_ui";
-import { SYMBOLS } from "../_constants";
-
-const names = {
-  [blast.id]: "blast",
-  [base.id]: "base",
-  [polygon.id]: "polygon",
-  [bsc.id]: "bsc",
-  [degen.id]: "degen",
-  [mainnet.id]: "mainnet",
-  [optimism.id]: "optimism",
-  [avalanche.id]: "avalanche",
-};
-const ids: Record<string, number> = {
-  blast: blast.id,
-  base: base.id,
-  polygon: polygon.id,
-  bsc: bsc.id,
-  degen: degen.id,
-  mainnet: mainnet.id,
-  optimism: optimism.id,
-  avalanche: avalanche.id,
-};
+import { SYMBOLS, CHAINS, NAMES, IDS } from "../_constants";
 
 type Props = {
   params: { chain: string };
 };
 
 export async function generateStaticParams() {
-  return Object.values(names);
+  return Object.values(NAMES);
 }
 
 export async function generateMetadata(
@@ -46,12 +15,22 @@ export async function generateMetadata(
   parent: ResolvingMetadata
 ): Promise<Metadata> {
   const { chain } = params;
-
   return {
-    title: `Wrap and unwrap ${SYMBOLS[ids[chain]]} and W${SYMBOLS[ids[chain]]}`,
+    title: `CandyWrap`,
+    description: `Wrap and unwrap your ${SYMBOLS[IDS[chain]]}/W${
+      SYMBOLS[IDS[chain]]
+    } in a few clicks right from your wallet`,
   };
 }
 
 export default function Home({ params }: { params: { chain: string } }) {
-  return <Ui />;
+  return (
+    <main className="flex min-h-screen flex-col items-center px-8 py-6 max-w-7xl mx-auto">
+      <h1 className="text-3xl mb-4">Candywrap</h1>
+      <h1 className="text-2xl mb-12">
+        Wrap/Umwrap {CHAINS[params.chain].nativeCurrency.symbol}
+      </h1>
+      <Ui />;
+    </main>
+  );
 }

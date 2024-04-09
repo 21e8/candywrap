@@ -7,32 +7,13 @@ import {
   useChains,
   useSwitchChain,
 } from "wagmi";
-import { LOGOS, SUPPORTED_CHAINS } from "./_constants";
+import { LOGOS, NAMES, SUPPORTED_CHAINS } from "./_constants";
 import { formatEther, parseEther } from "viem";
 import { useWethBalance, useWriteUnwrapWeth, useWriteWrapWeth } from "./_hooks";
 import { useEffect, useState } from "react";
 import { ConnectKitButton } from "connectkit";
-import {
-  blast,
-  base,
-  polygon,
-  bsc,
-  degen,
-  mainnet,
-  optimism,
-  avalanche,
-} from "viem/chains";
 import { useRouter, usePathname } from "next/navigation";
-const names: Record<number, string> = {
-  [blast.id]: "blast",
-  [base.id]: "base",
-  [polygon.id]: "polygon",
-  [bsc.id]: "bsc",
-  [degen.id]: "degen",
-  [mainnet.id]: "mainnet",
-  [optimism.id]: "optimism",
-  [avalanche.id]: "avalanche",
-};
+
 export default function Ui() {
   const [inputEthAmount, setInputEthAmount] = useState("");
   const [inputWethAmount, setInputWethAmount] = useState("");
@@ -54,15 +35,14 @@ export default function Ui() {
   const pathname = usePathname();
   const router = useRouter();
   useEffect(() => {
-    if (pathname !== `/${names[chainId]}`) {
-      router.push(`/${names[chainId]}`);
+    if (pathname !== `/${NAMES[chainId]}`) {
+      router.push(`/${NAMES[chainId]}`);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [chainId, pathname]);
   return (
-    <main className="flex min-h-screen flex-col items-center px-8 py-6 max-w-7xl mx-auto">
-      <h1 className="text-3xl mb-4">Candywrap</h1>
-      <h1 className="text-2xl mb-12">Wrap/Umwrap {balance.data?.symbol}</h1>
+    <>
+    
       <ConnectKitButton />
       <div className="dropdown w-[200px]">
         <div tabIndex={0} role="button" className="btn m-1 w-full">
@@ -235,23 +215,6 @@ export default function Ui() {
           </button>
         </div>
       </div>
-      {/* <span>
-        Balance{' '}
-        {balance.isLoading ? (
-          <span> ...</span>
-        ) : (
-          `${balance.data?.symbol}: ${formattedBalance}`
-        )}
-      </span>
-      <br />
-      <span>
-        Balance{' '}
-        {wethBalance.isLoading ? (
-          <span> ...</span>
-        ) : (
-          `W${balance.data?.symbol}: ${formattedWethBalance}`
-        )}
-      </span> */}
-    </main>
+    </>
   );
 }
