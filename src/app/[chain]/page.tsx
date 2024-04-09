@@ -16,7 +16,7 @@ export async function generateMetadata(
   parent: ResolvingMetadata
 ): Promise<Metadata> {
   const { chain } = params;
-  const symb = SYMBOLS[IDS[chain]];
+  const symb = SYMBOLS[IDS[chain]] || 'ETH';
   const description = `Easily wrap and unwrap your ${symb} or W${symb} in a few clicks right from your wallet. Supports multiple chains. Swap now on ${
     NAMES[IDS[chain]]
   }!`;
@@ -42,7 +42,7 @@ export default function Home({ params }: { params: { chain: string } }) {
     <main className="flex min-h-screen flex-col items-center px-8 py-6 max-w-7xl mx-auto">
       <h1 className="text-3xl mb-4">Candywrap</h1>
       <h1 className="text-2xl mb-12">
-        Wrap/Umwrap {CHAINS[params.chain].nativeCurrency.symbol}
+        Wrap/Umwrap {CHAINS[params.chain]?.nativeCurrency?.symbol || 'ETH'}
       </h1>
       <Ui />
     </main>
