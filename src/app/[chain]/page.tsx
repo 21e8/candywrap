@@ -20,15 +20,15 @@ export async function generateMetadata(
     NAMES[IDS[chain]]
   }!`;
   return {
-    title: "CandyWrap",
+    title: `CandyWrap - ${NAMES[IDS[chain]] || "Ethereum"}`,
     description,
     openGraph: {
-      title: "CandyWrap",
+      title: `CandyWrap - ${NAMES[IDS[chain]] || "Ethereum"}`,
       url: `https://candywrap.dev/${chain}`,
       description,
     },
     twitter: {
-      title: "CandyWrap",
+      title: `CandyWrap - ${NAMES[IDS[chain]] || "Ethereum"}`,
       description,
       creator: "@thereal0xalice",
     },

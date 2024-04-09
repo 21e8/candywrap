@@ -77,7 +77,7 @@ export const NAMES: Record<number, string> = {
   [polygon.id]: "polygon",
   [bsc.id]: "bsc",
   [degen.id]: "degen",
-  [mainnet.id]: "mainnet",
+  [mainnet.id]: "ethereum",
   [optimism.id]: "optimism",
   [avalanche.id]: "avalanche",
 };
