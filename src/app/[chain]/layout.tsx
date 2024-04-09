@@ -50,7 +50,7 @@ export default function RootLayout({
     <div className="pb-24">
       <main className="flex min-h-screen flex-col items-center px-8 py-6 max-w-7xl mx-auto">
         {children}
-        <div className="flex flex-col justify-center items-center text-center mt-8">
+        <div className="flex flex-col justify-center items-center text-center mt-16">
           <span className="mb-8">
             Made With ❤️ by{" "}
             <a

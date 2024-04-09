@@ -84,7 +84,7 @@ export default function Ui({ chain }: { chain: string }) {
               key={chain.id}
               className="flex"
             >
-              <a>
+              <a className="gap-4">
                 <Image
                   src={LOGOS[chain.id]}
                   className="rounded-full"
