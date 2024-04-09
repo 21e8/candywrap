@@ -42,7 +42,6 @@ export default function Ui() {
   }, [chainId, pathname]);
   return (
     <>
-    
       <ConnectKitButton />
       <div className="dropdown w-[200px]">
         <div tabIndex={0} role="button" className="btn m-1 w-full">
@@ -103,7 +102,8 @@ export default function Ui() {
         <div className="card-body">
           <h2 className="card-title">Wrap {balance.data?.symbol}</h2>
           <p>
-            Wrap {balance.data?.symbol} to W{balance.data?.symbol}
+            Wrap {balance.data?.symbol || "ETH"} to W
+            {balance.data?.symbol || "ETH"}
           </p>
           <input
             value={inputEthAmount}
@@ -160,9 +160,10 @@ export default function Ui() {
       </div>
       <div className="card w-96 bg-base-100 shadow-xl">
         <div className="card-body">
-          <h2 className="card-title">Unwrap {balance.data?.symbol}</h2>
+          <h2 className="card-title">Unwrap {balance.data?.symbol || "ETH"}</h2>
           <p>
-            Unwrap W{balance.data?.symbol} to {balance.data?.symbol}
+            Unwrap W{balance.data?.symbol || "ETH"} to{" "}
+            {balance.data?.symbol || "ETH"}
           </p>
           <input
             value={inputWethAmount}
