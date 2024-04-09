@@ -4,10 +4,22 @@ import "./globals.css";
 import { Providers } from "./_providers";
 
 const inter = Inter({ subsets: ["latin"] });
-
+const title = "CandyWrap";
+const description =
+  "Wrap and unwrap your ETH/WETH in a few clicks right from your wallet. Supports multiple chains.";
 export const metadata: Metadata = {
-  title: "CandyWrap",
-  description: "Wrap and unwrap your ETH/WETH in a few clicks right from your wallet",
+  title: title,
+  description,
+  openGraph: {
+    title: title,
+    description,
+    url: "https://candywrap.dev",
+  },
+  twitter: {
+    title: title,
+    description,
+    creator: "@thereal0xalice",
+  },
 };
 
 export default function RootLayout({

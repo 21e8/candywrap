@@ -15,11 +15,21 @@ export async function generateMetadata(
   parent: ResolvingMetadata
 ): Promise<Metadata> {
   const { chain } = params;
+  const symb = SYMBOLS[IDS[chain]];
+  const description = `Wrap and unwrap your ${symb}/W${symb} in a few clicks right from your wallet. Supports multiple chains.`;
   return {
-    title: `CandyWrap`,
-    description: `Wrap and unwrap your ${SYMBOLS[IDS[chain]]}/W${
-      SYMBOLS[IDS[chain]]
-    } in a few clicks right from your wallet`,
+    title: "CandyWrap",
+    description,
+    openGraph: {
+      title: "CandyWrap",
+      url: `https://candywrap.dev/${chain}`,
+      description,
+    },
+    twitter: {
+      title: "CandyWrap",
+      description,
+      creator: "@thereal0xalice",
+    },
   };
 }
 
@@ -30,7 +40,7 @@ export default function Home({ params }: { params: { chain: string } }) {
       <h1 className="text-2xl mb-12">
         Wrap/Umwrap {CHAINS[params.chain].nativeCurrency.symbol}
       </h1>
-      <Ui />;
+      <Ui />
     </main>
   );
 }
