@@ -2,37 +2,21 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./_providers";
+import { BASE_METADATA } from "./base-metadata";
 
 const inter = Inter({ subsets: ["latin"] });
-const title = "CandyWrap";
-const description =
-  "Wrap and unwrap your ETH/WETH in a few clicks right from your wallet. Supports multiple chains. Swap now on Ethereum!";
 export const metadata: Metadata = {
-  title: title,
-  description,
+  ...BASE_METADATA,
   openGraph: {
-    title: title,
-    description,
+    title: BASE_METADATA.title,
+    description: BASE_METADATA.description,
     url: "https://candywrap.dev",
   },
   twitter: {
-    title: title,
-    description,
+    title: BASE_METADATA.title,
+    description: BASE_METADATA.description,
     creator: "@thereal0xalice",
   },
-  authors: [{ name: "0xAlice" }],
-  category: "Finance",
-  creator: "0xAlice",
-  keywords: [
-    "wrap",
-    "unwrap",
-    "token",
-    "exchange",
-    "defi",
-    "candywrap",
-    "candy",
-    "swap",
-  ],
 };
 
 export default function RootLayout({

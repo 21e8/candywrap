@@ -1,6 +1,7 @@
 import { Metadata, ResolvingMetadata } from "next";
 import Ui from "../_ui";
 import { SYMBOLS, CHAINS, NAMES, IDS } from "../_constants";
+import { BASE_METADATA } from "../base-metadata";
 
 type Props = {
   params: { chain: string };
@@ -16,10 +17,11 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   const { chain } = params;
   const symb = SYMBOLS[IDS[chain]];
-  const description = `Wrap and unwrap your ${symb}/W${symb} in a few clicks right from your wallet. Supports multiple chains. Swap now on ${
+  const description = `Easily wrap and unwrap your ${symb} or W${symb} in a few clicks right from your wallet. Supports multiple chains. Swap now on ${
     NAMES[IDS[chain]]
   }!`;
   return {
+    ...BASE_METADATA,
     title: `CandyWrap - ${NAMES[IDS[chain]] || "Ethereum"}`,
     description,
     openGraph: {
@@ -32,19 +34,6 @@ export async function generateMetadata(
       description,
       creator: "@thereal0xalice",
     },
-    authors: [{ name: "0xAlice" }],
-    category: "Finance",
-    creator: "0xAlice",
-    keywords: [
-      "wrap",
-      "unwrap",
-      "token",
-      "exchange",
-      "defi",
-      "candywrap",
-      "candy",
-      "swap",
-    ],
   };
 }
 
