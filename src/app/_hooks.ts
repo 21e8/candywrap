@@ -75,6 +75,8 @@ export function useWriteWrapWeth({ amountWei }: { amountWei: bigint }) {
     { hash }
   );
 
+  console.log({ hash, isPending, isSuccess, isLoading, isLoadingError, error, failureReason })
+
   function handleWrite() {
     if (!SUPPORTED_CHAIN_IDS.includes(chainId)) {
       alert("Please switch to a supported network");

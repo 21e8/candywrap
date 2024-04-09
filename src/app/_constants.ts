@@ -5,6 +5,9 @@ import {
   blast,
   bsc,
   degen,
+  fantom,
+  filecoin,
+  fuse,
   mainnet,
   optimism,
   polygon,
@@ -26,7 +29,10 @@ export const WBNB_BSC_ADDRESS: Address =
   "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c";
 export const WDEGEN_DEGEN_ADDRESS: Address =
   "0xEb54dACB4C2ccb64F8074eceEa33b5eBb38E5387";
-
+export const FILECOIN_WFIL_ADDRESS: Address =
+  "0x60E1773636CF5E4A227d9AC24F20fEca034ee25A";
+export const FANTOM_WFTM_ADDRESS: Address = "0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83";
+export const FUSE_WFUSE_ADDRESS: Address = "0x0BE9e53fd7EDaC9F859882AfdDa116645287C629";
 export const WETH_ADDRESSES: Record<number, Address> = {
   [mainnet.id]: WETH_MAINNET_ADDRESS,
   [blast.id]: WETH_BLAST_ADDRESS,
@@ -36,6 +42,9 @@ export const WETH_ADDRESSES: Record<number, Address> = {
   [base.id]: WETH_BASE_ADDRESS,
   [bsc.id]: WBNB_BSC_ADDRESS,
   [degen.id]: WDEGEN_DEGEN_ADDRESS,
+  [filecoin.id]: FILECOIN_WFIL_ADDRESS,
+  [fantom.id]: FANTOM_WFTM_ADDRESS,
+  [fuse.id]: FUSE_WFUSE_ADDRESS
 };
 
 export const SUPPORTED_CHAINS = [
@@ -47,6 +56,9 @@ export const SUPPORTED_CHAINS = [
   base,
   bsc,
   degen,
+  filecoin,
+  fuse,
+  fantom
 ] as const;
 export const SUPPORTED_CHAIN_IDS = SUPPORTED_CHAINS.map(
   (chain) => chain.id
@@ -60,6 +72,9 @@ export const LOGOS: Record<number, string> = {
   [mainnet.id]: "https://icons.llamao.fi/icons/chains/rsz_ethereum.jpg",
   [optimism.id]: "https://icons.llamao.fi/icons/chains/rsz_optimism.jpg",
   [polygon.id]: "https://icons.llamao.fi/icons/chains/rsz_polygon.jpg",
+  [filecoin.id]: "https://icons.llamao.fi/icons/chains/rsz_filecoin.jpg",
+  [fuse.id]: "https://icons.llamao.fi/icons/chains/rsz_fuse.jpg",
+  [fantom.id]: "https://icons.llamao.fi/icons/chains/rsz_fantom.jpg",
 };
 
 export const SYMBOLS: Record<number, string> = {
@@ -71,6 +86,9 @@ export const SYMBOLS: Record<number, string> = {
   [base.id]: base.nativeCurrency.symbol,
   [bsc.id]: bsc.nativeCurrency.symbol,
   [degen.id]: degen.nativeCurrency.symbol,
+  [filecoin.id]: filecoin.nativeCurrency.symbol,
+  [fuse.id]: fuse.nativeCurrency.symbol,
+  [fantom.id]: fantom.nativeCurrency.symbol,
 };
 
 export const NAMES: Record<number, string> = {
@@ -82,6 +100,9 @@ export const NAMES: Record<number, string> = {
   [mainnet.id]: "ethereum",
   [optimism.id]: "optimism",
   [avalanche.id]: "avalanche",
+  [filecoin.id]: "filecoin",
+  [fuse.id]: "fuse",
+  [fantom.id]: "fantom",
 };
 
 export const CHAINS: Record<string, any> = {
@@ -93,6 +114,9 @@ export const CHAINS: Record<string, any> = {
   ethereum: mainnet,
   optimism: optimism,
   avalanche: avalanche,
+  filecoin: filecoin,
+  fuse: fuse,
+  fantom: fantom,
 };
 
 export const IDS: Record<string, number> = {
@@ -104,4 +128,7 @@ export const IDS: Record<string, number> = {
   ethereum: mainnet.id,
   optimism: optimism.id,
   avalanche: avalanche.id,
+  filecoin: filecoin.id,
+  fuse: fuse.id,
+  fantom: fantom.id,
 };

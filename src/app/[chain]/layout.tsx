@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { BASE_METADATA } from "../base-metadata";
+import { BASE_METADATA } from "../_base-metadata";
 
 export const metadata: Metadata = {
   ...BASE_METADATA,

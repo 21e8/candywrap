@@ -1,7 +1,7 @@
 import { Metadata, ResolvingMetadata } from "next";
 import Ui from "../_ui";
 import { SYMBOLS, CHAINS, NAMES, IDS } from "../_constants";
-import { BASE_METADATA } from "../base-metadata";
+import { BASE_METADATA } from "../_base-metadata";
 
 type Props = {
   params: { chain: string };

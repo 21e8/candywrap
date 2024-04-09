@@ -10,6 +10,9 @@ import {
   base,
   optimism,
   polygon,
+  filecoin,
+  fuse,
+  fantom,
 } from "wagmi/chains";
 import { ConnectKitProvider, getDefaultConfig } from "connectkit";
 import { SUPPORTED_CHAINS } from "./_constants";
@@ -31,6 +34,9 @@ export const config = createConfig(
       [mainnet.id]: http(`https://ethereum-rpc.publicnode.com`),
       [optimism.id]: http("https://optimism-rpc.publicnode.com"),
       [polygon.id]: http("https://polygon-bor-rpc.publicnode.com"),
+      [filecoin.id]: http("https://filecoin.drpc.org"),
+      [fuse.id]: http("https://fuse.drpc.org"),
+      [fantom.id]: http("https://rpc3.fantom.network"),
     },
 
     // Required API Keys

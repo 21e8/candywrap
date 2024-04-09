@@ -5,6 +5,9 @@ import {
   blast,
   bsc,
   degen,
+  fantom,
+  filecoin,
+  fuse,
   mainnet,
   optimism,
   polygon,
@@ -1800,4 +1803,7 @@ export const WETH_ABIS: Record<string, Abi> = {
   [base.id]: WETH_BASE_ABI,
   [bsc.id]: WBNB_BSC_ABI,
   [degen.id]: WDEGEN_DEGEN_ABI,
+  [filecoin.id]: WDEGEN_DEGEN_ABI,
+  [fuse.id]: WDEGEN_DEGEN_ABI,
+  [fantom.id]: WDEGEN_DEGEN_ABI,
 };

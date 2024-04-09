@@ -40,6 +40,7 @@ export default function Ui() {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [chainId, pathname]);
+  console.log({ balance, wethBalance});
   return (
     <>
       <ConnectKitButton />

@@ -28,6 +28,8 @@ export const BASE_METADATA = {
     'bnb',
     'binance',
     'smartchain',
+    'fuse',
+    'fantom',
   ],
   title: "CandyWrap",
   description:
