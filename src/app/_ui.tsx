@@ -7,14 +7,14 @@ import {
   useChains,
   useSwitchChain,
 } from "wagmi";
-import { LOGOS, NAMES, SUPPORTED_CHAINS } from "./_constants";
+import { IDS, LOGOS, NAMES, SUPPORTED_CHAINS, SYMBOLS } from "./_constants";
 import { formatEther, parseEther } from "viem";
 import { useWethBalance, useWriteUnwrapWeth, useWriteWrapWeth } from "./_hooks";
 import { useEffect, useState } from "react";
 import { ConnectKitButton } from "connectkit";
 import { useRouter, usePathname } from "next/navigation";
 
-export default function Ui() {
+export default function Ui({ chain }: { chain: string }) {
   const [inputEthAmount, setInputEthAmount] = useState("");
   const [inputWethAmount, setInputWethAmount] = useState("");
   const { switchChain } = useSwitchChain();
@@ -120,11 +120,11 @@ export default function Ui() {
       <div className="card w-96 bg-base-100 shadow-xl mb-3">
         <div className="card-body">
           <h2 className="card-title mb-6 w-full text-center block">
-            Wrap {balance.data?.symbol}
+            Wrap {balance.data?.symbol || SYMBOLS[IDS[chain]] || "ETH"}
           </h2>
           <p className="hidden">
-            Wrap {balance.data?.symbol || "ETH"} to W
-            {balance.data?.symbol || "ETH"}
+            Wrap {balance.data?.symbol || SYMBOLS[IDS[chain]] || "ETH"} to W
+            {balance.data?.symbol || SYMBOLS[IDS[chain]] || "ETH"}
           </p>
           <input
             value={inputEthAmount}
@@ -198,11 +198,11 @@ export default function Ui() {
       <div className="card w-96 bg-base-100 shadow-xl my-3">
         <div className="card-body">
           <h2 className="card-title mb-6 w-full text-center block">
-            Unwrap {balance.data?.symbol || "ETH"}
+            Unwrap {balance.data?.symbol || SYMBOLS[IDS[chain]] || "ETH"}
           </h2>
           <p className="hidden">
-            Unwrap W{balance.data?.symbol || "ETH"} to{" "}
-            {balance.data?.symbol || "ETH"}
+            Unwrap W{balance.data?.symbol || SYMBOLS[IDS[chain]] || "ETH"} to
+            {balance.data?.symbol || SYMBOLS[IDS[chain]] || "ETH"}
           </p>
           <input
             value={inputWethAmount}

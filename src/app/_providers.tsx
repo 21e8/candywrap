@@ -43,11 +43,11 @@ export const config = createConfig(
     walletConnectProjectId: process.env.NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID!,
 
     // Required App Info
-    appName: "WrapEth",
+    appName: "CandyWrap",
 
     // Optional App Info
-    appDescription: "Wrap and unwrap your ETH/WETH",
-    appUrl: "https://wrap-eth.vercel.app", // your app's url
+    appDescription: "Wrap and unwrap your ETH/WETH with ease",
+    appUrl: "https://candywrap.dev", // your app's url
     // appIcon: "https://family.co/logo.png", // your app's icon, no bigger than 1024x1024px (max. 1MB)
     ssr: true,
   })
