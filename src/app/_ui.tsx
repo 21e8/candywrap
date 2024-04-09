@@ -40,21 +40,39 @@ export default function Ui() {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [chainId, pathname]);
-  console.log({ balance, wethBalance});
   return (
     <>
       <ConnectKitButton />
-      <div className="dropdown w-[200px]">
+      <div className="dropdown mt-3 w-[200px]">
         <div tabIndex={0} role="button" className="btn m-1 w-full">
-          <Image
-            src={LOGOS[chainId]}
-            className="rounded-full"
-            alt="Chain"
-            width={24}
-            height={24}
-          />
+          <div className="w-full grid grid-cols-1-4-1 items-center">
+            <Image
+              src={LOGOS[chainId]}
+              className="rounded-full mr-4"
+              alt="Chain"
+              width={24}
+              height={24}
+            />
 
-          {currentChain?.name}
+            <span className="w-full text-center">{currentChain?.name}</span>
+
+            <div className="flex flex-row justify-end items-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="w-4 h-4"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                />
+              </svg>
+            </div>
+          </div>
         </div>
         <ul
           tabIndex={0}
