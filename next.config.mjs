@@ -7,7 +7,7 @@ const nextConfig = {
     return [
       {
         source: "/",
-        destination: "/mainnet",
+        destination: "/ethereum",
         permanent: true,
       },
     ];
