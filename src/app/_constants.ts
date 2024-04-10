@@ -1,14 +1,19 @@
 import { Abi, Address, http } from "viem";
 import {
+  aurora,
   avalanche,
   base,
   blast,
   bsc,
+  canto,
   degen,
   fantom,
   filecoin,
   fuse,
+  harmonyOne as harmony,
+  linea,
   mainnet,
+  metis,
   optimism,
   polygon,
   scroll,
@@ -51,6 +56,16 @@ export const FUSE_WFUSE_ADDRESS: Address =
   "0x0BE9e53fd7EDaC9F859882AfdDa116645287C629";
 export const WETH_SCROLL_ADDRESS: Address =
   "0x5300000000000000000000000000000000000004";
+export const WETH_AURORA_ADDRESS: Address =
+  "0xC9BdeEd33CD01541e1eeD10f90519d2C06Fe3feB";
+export const WCANTO_CANTO_ADDRESS: Address =
+  "0x826551890Dc65655a0Aceca109aB11AbDbD7a07B";
+export const WONE_ONE_ADDRESS: Address =
+  "0xcf664087a5bb0237a0bad6742852ec6c8d69a27a";
+export const WETH_LINEA_ADDRESS: Address =
+  "0xe5d7c2a44ffddf6b295a15c148167daaaf5cf34f";
+export const WMETIS_METIS_ADDRESS: Address =
+  "0x75cb093E4D61d2A2e65D8e0BBb01DE8d89b53481";
 export const WETH_ADDRESSES: Record<number, Address> = {
   [mainnet.id]: WETH_MAINNET_ADDRESS,
   [blast.id]: WETH_BLAST_ADDRESS,
@@ -65,6 +80,11 @@ export const WETH_ADDRESSES: Record<number, Address> = {
   [fuse.id]: FUSE_WFUSE_ADDRESS,
   [zora.id]: WETH_ZORA_ADDRESS,
   [scroll.id]: WETH_ZORA_ADDRESS,
+  [aurora.id]: WETH_AURORA_ADDRESS,
+  [canto.id]: WCANTO_CANTO_ADDRESS,
+  [harmony.id]: WONE_ONE_ADDRESS,
+  [linea.id]: WETH_LINEA_ADDRESS,
+  [metis.id]: WMETIS_METIS_ADDRESS,
 };
 
 export const SUPPORTED_CHAINS = [
@@ -81,6 +101,11 @@ export const SUPPORTED_CHAINS = [
   fantom,
   zora,
   scroll,
+  aurora,
+  canto,
+  harmony,
+  linea,
+  metis,
 ] as const;
 export const SUPPORTED_CHAIN_IDS = SUPPORTED_CHAINS.map(
   (chain) => chain.id
@@ -99,6 +124,11 @@ export const LOGOS: Record<number, string> = {
   [fantom.id]: "https://icons.llamao.fi/icons/chains/rsz_fantom.jpg",
   [zora.id]: "/logos/zora.png",
   [scroll.id]: "/logos/scroll.png",
+  [aurora.id]: "https://icons.llamao.fi/icons/chains/rsz_aurora.jpg",
+  [canto.id]: "https://icons.llamao.fi/icons/chains/rsz_canto.jpg",
+  [harmony.id]: "/logos/harmony.webp",
+  [linea.id]: "https://icons.llamao.fi/icons/chains/rsz_linea.jpg",
+  [metis.id]: "https://icons.llamao.fi/icons/chains/rsz_metis.jpg",
 };
 
 export const SYMBOLS: Record<number, string> = {
@@ -115,6 +145,11 @@ export const SYMBOLS: Record<number, string> = {
   [fantom.id]: fantom.nativeCurrency.symbol,
   [zora.id]: zora.nativeCurrency.symbol,
   [scroll.id]: scroll.nativeCurrency.symbol,
+  [aurora.id]: aurora.nativeCurrency.symbol,
+  [canto.id]: canto.nativeCurrency.symbol,
+  [harmony.id]: harmony.nativeCurrency.symbol,
+  [linea.id]: linea.nativeCurrency.symbol,
+  [metis.id]: metis.nativeCurrency.symbol,
 };
 
 export const NAMES: Record<number, string> = {
@@ -131,6 +166,11 @@ export const NAMES: Record<number, string> = {
   [fantom.id]: fantom.name,
   [zora.id]: zora.name,
   [scroll.id]: scroll.name,
+  [aurora.id]: aurora.name,
+  [canto.id]: canto.name,
+  [harmony.id]: harmony.name,
+  [linea.id]: linea.name,
+  [metis.id]: metis.name,
 };
 
 export const CHAIN_IDS: Record<number, string> = {
@@ -147,6 +187,11 @@ export const CHAIN_IDS: Record<number, string> = {
   [fantom.id]: "fantom",
   [zora.id]: "zora",
   [scroll.id]: "scroll",
+  [aurora.id]: "aurora",
+  [canto.id]: "canto",
+  [harmony.id]: "harmony",
+  [linea.id]: "linea",
+  [metis.id]: "metis",
 };
 
 export const CHAINS: Record<string, any> = {
@@ -163,6 +208,11 @@ export const CHAINS: Record<string, any> = {
   fantom: fantom,
   zora: zora,
   scroll: scroll,
+  aurora: aurora,
+  canto: canto,
+  harmony: harmony,
+  linea: linea,
+  metis: metis,
 };
 
 export const WETH_ABIS: Record<string, Abi> = {
@@ -179,6 +229,11 @@ export const WETH_ABIS: Record<string, Abi> = {
   [fantom.id]: WDEGEN_DEGEN_ABI,
   [zora.id]: WDEGEN_DEGEN_ABI,
   [scroll.id]: WDEGEN_DEGEN_ABI,
+  [aurora.id]: WDEGEN_DEGEN_ABI,
+  [canto.id]: WDEGEN_DEGEN_ABI,
+  [harmony.id]: WDEGEN_DEGEN_ABI,
+  [linea.id]: WDEGEN_DEGEN_ABI,
+  [metis.id]: WDEGEN_DEGEN_ABI,
 };
 
 export const IDS: Record<string, number> = {
@@ -195,6 +250,11 @@ export const IDS: Record<string, number> = {
   fantom: fantom.id,
   zora: zora.id,
   scroll: scroll.id,
+  aurora: aurora.id,
+  cantor: canto.id,
+  harmony: harmony.id,
+  linea: linea.id,
+  metis: metis.id,
 };
 
 export const RPCS = {
@@ -212,4 +272,9 @@ export const RPCS = {
   [fantom.id]: http("https://rpc3.fantom.network"),
   [zora.id]: http("https://rpc.zora.energy"),
   [scroll.id]: http("https://scroll.drpc.org"),
+  [aurora.id]: http("https://1rpc.io/aurora	"),
+  [canto.id]: http("https://canto-rpc.ansybl.io"),
+  [harmony.id]: http("https://1rpc.io/one	"),
+  [linea.id]: http("https://linea.drpc.org"),
+  [metis.id]: http("https://metis.drpc.org"),
 };
