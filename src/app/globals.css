@@ -16,3 +16,14 @@ body {
     text-wrap: balance;
   }
 }
+
+.connect-kit-container button > div {
+  background-color: oklch(var(--s));
+  color: black;
+}
+
+.connect-kit-container button:hover > div {
+  background-color: oklch(var(--s)) !important;
+  filter: brightness(75%);
+  color: black !important;
+}

@@ -66,7 +66,7 @@ export default function Ui({ chain }: { chain: string }) {
 
   return (
     <>
-      <div className="h-[40px]">
+      <div className="h-[40px] connect-kit-container">
         <ConnectKitButton />
       </div>
 
@@ -110,7 +110,6 @@ export default function Ui({ chain }: { chain: string }) {
               </div>
             </button>
             <div
-              id="dropdownSearch"
               className={`z-10 bg-white rounded-lg shadow w-60 dark:bg-gray-700 absolute top-[4.5rem] ${
                 dropdownVisible ? "" : "hidden"
               }`}
@@ -147,10 +146,7 @@ export default function Ui({ chain }: { chain: string }) {
                   />
                 </div>
               </div>
-              <ul
-                className="h-48 px-3 pb-3 overflow-y-auto text-sm text-gray-700 dark:text-gray-200"
-                aria-labelledby="dropdownSearchButton"
-              >
+              <ul className="h-48 px-3 pb-3 overflow-y-auto text-sm text-gray-700 dark:text-gray-200">
                 {filteredChains.map((chain) => (
                   <li
                     onClick={() => {
@@ -168,10 +164,7 @@ export default function Ui({ chain }: { chain: string }) {
                         width={24}
                         height={24}
                       />
-                      <label
-                        htmlFor="checkbox-item-11"
-                        className="w-full py-2 ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300"
-                      >
+                      <label className="w-full py-2 ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300 cursor-pointer">
                         {chain.name}
                       </label>
                     </div>
@@ -205,7 +198,7 @@ export default function Ui({ chain }: { chain: string }) {
                   ).toString()
                 )
               }
-              className="btn btn-accent btn-outline join-item w-1/3"
+              className="btn btn-secondary btn-outline join-item w-1/3"
             >
               25%
             </button>
@@ -217,7 +210,7 @@ export default function Ui({ chain }: { chain: string }) {
                   ).toString()
                 )
               }
-              className="btn btn-accent btn-outline join-item w-1/3"
+              className="btn btn-secondary btn-outline join-item w-1/3"
             >
               50%
             </button>
@@ -229,7 +222,7 @@ export default function Ui({ chain }: { chain: string }) {
                   ).toString()
                 )
               }
-              className="btn btn-accent btn-outline join-item w-1/3"
+              className="btn btn-secondary btn-outline join-item w-1/3"
             >
               100%
             </button>
@@ -237,14 +230,14 @@ export default function Ui({ chain }: { chain: string }) {
           <button
             onClick={() => handleWriteWrap()}
             disabled={!inputEthAmount}
-            className="btn mt-6 btn-primary border-2 border-primary hover:border-base-100 hover:ring-2 hover:ring-primary"
+            className="btn mt-6 btn-warning border-2 border-warning hover:border-base-100 hover:ring-2 hover:ring-warning"
           >
             Wrap
           </button>
         </div>
       </div>
 
-      <div className="bg-accent my-4 text-black rounded-full h-16 w-16 flex items-center justify-center">
+      <div className="bg-secondary my-4 text-black rounded-full h-16 w-16 flex items-center justify-center">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -285,7 +278,7 @@ export default function Ui({ chain }: { chain: string }) {
                   ).toString()
                 )
               }
-              className="btn btn-accent btn-outline join-item w-1/3"
+              className="btn btn-secondary btn-outline join-item w-1/3"
             >
               25%
             </button>
@@ -297,7 +290,7 @@ export default function Ui({ chain }: { chain: string }) {
                   ).toString()
                 )
               }
-              className="btn btn-accent btn-outline join-item w-1/3"
+              className="btn btn-secondary btn-outline join-item w-1/3"
             >
               50%
             </button>
@@ -307,7 +300,7 @@ export default function Ui({ chain }: { chain: string }) {
                   Number(formatEther(wethBalance.data || BigInt(0))).toString()
                 )
               }
-              className="btn btn-accent btn-outline join-item w-1/3"
+              className="btn btn-secondary btn-outline join-item w-1/3"
             >
               100%
             </button>
@@ -315,7 +308,7 @@ export default function Ui({ chain }: { chain: string }) {
           <button
             onClick={handleWriteUnwrap}
             disabled={!inputWethAmount}
-            className="btn mt-6 btn-primary border-2 border-primary hover:border-base-100 hover:ring-2 hover:ring-primary"
+            className="btn mt-6 btn-warning border-2 border-warning hover:border-base-100 hover:ring-2 hover:ring-warning"
           >
             Unwrap
           </button>
