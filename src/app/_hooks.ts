@@ -7,7 +7,7 @@ import {
   useWriteContract,
 } from "wagmi";
 import { SUPPORTED_CHAIN_IDS, WETH_ABIS, WETH_ADDRESSES } from "./_constants";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { TypedContractRead } from "@/types/typed-contract-read";
 
 export function useWriteUnwrapWeth({ amountWei }: { amountWei: bigint }) {
@@ -122,4 +122,25 @@ export const useWethBalance = () => {
       retry: 0,
     },
   }) as TypedContractRead<bigint>;
+};
+
+export const useOutsideClick = (callback: Function) => {
+  const ref = useRef<HTMLElement>();
+
+  useEffect(() => {
+    const handleClick = (_event: any) => {
+      if (ref.current && !ref.current.contains(_event.target)) {
+        callback();
+      }
+    };
+
+    document.addEventListener("click", handleClick);
+
+    return () => {
+      document.removeEventListener("click", handleClick);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  return ref;
 };
