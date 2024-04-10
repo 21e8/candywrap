@@ -237,7 +237,7 @@ export default function Ui({ chain }: { chain: string }) {
         </div>
       </div>
 
-      <div className="bg-secondary my-4 text-black rounded-full h-16 w-16 flex items-center justify-center">
+      <div className="bg-accent my-4 text-black rounded-full h-16 w-16 flex items-center justify-center">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
