@@ -1,4 +1,4 @@
-import { Abi, Address, http } from "viem";
+import { Address, http } from "viem";
 import {
   aurora,
   avalanche,
@@ -25,7 +25,6 @@ import {
   wanchain,
   boba,
 } from "viem/chains";
-import { WRAP_ABI } from "./abi";
 
 export const WETH_BLAST_ADDRESS: Address =
   "0x4300000000000000000000000000000000000004";
@@ -47,11 +46,11 @@ export const WBNB_BSC_ADDRESS: Address =
   "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c";
 export const WDEGEN_DEGEN_ADDRESS: Address =
   "0xEb54dACB4C2ccb64F8074eceEa33b5eBb38E5387";
-export const FILECOIN_WFIL_ADDRESS: Address =
+export const WFIL_FILECOIN_ADDRESS: Address =
   "0x60E1773636CF5E4A227d9AC24F20fEca034ee25A";
-export const FANTOM_WFTM_ADDRESS: Address =
+export const WFTM_FANTOM_ADDRESS: Address =
   "0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83";
-export const FUSE_WFUSE_ADDRESS: Address =
+export const WFUSE_FUSE_ADDRESS: Address =
   "0x0BE9e53fd7EDaC9F859882AfdDa116645287C629";
 export const WETH_AURORA_ADDRESS: Address =
   "0xC9BdeEd33CD01541e1eeD10f90519d2C06Fe3feB";
@@ -75,6 +74,7 @@ export const WWAN_WAN_ADDRESS: Address =
   "0xdabd997ae5e4799be47d6e69d9431615cba28f48";
 export const WETH_BOBA_ADDRESS: Address =
   "0xDeadDeAddeAddEAddeadDEaDDEAdDeaDDeAD0000";
+
 export const WETH_ADDRESSES: Record<number, Address> = {
   [mainnet.id]: WETH_MAINNET_ADDRESS,
   [blast.id]: WETH_BLAST_ADDRESS,
@@ -84,9 +84,9 @@ export const WETH_ADDRESSES: Record<number, Address> = {
   [base.id]: WETH_BASE_ADDRESS,
   [bsc.id]: WBNB_BSC_ADDRESS,
   [degen.id]: WDEGEN_DEGEN_ADDRESS,
-  [filecoin.id]: FILECOIN_WFIL_ADDRESS,
-  [fantom.id]: FANTOM_WFTM_ADDRESS,
-  [fuse.id]: FUSE_WFUSE_ADDRESS,
+  [filecoin.id]: WFIL_FILECOIN_ADDRESS,
+  [fantom.id]: WFTM_FANTOM_ADDRESS,
+  [fuse.id]: WFUSE_FUSE_ADDRESS,
   [zora.id]: WETH_ZORA_ADDRESS,
   [scroll.id]: WETH_SCROLL_ADDRESS,
   [aurora.id]: WETH_AURORA_ADDRESS,
@@ -128,9 +128,11 @@ export const SUPPORTED_CHAINS = [
   wanchain,
   boba,
 ] as const;
+
 export const SUPPORTED_CHAIN_IDS = SUPPORTED_CHAINS.map(
   (chain) => chain.id
 ) as number[];
+
 export const LOGOS: Record<number, string> = {
   [avalanche.id]: "https://icons.llamao.fi/icons/chains/rsz_avalanche.jpg",
   [base.id]: "https://icons.llamao.fi/icons/chains/rsz_base.jpg",
@@ -363,21 +365,21 @@ export const BASE_METADATA = {
     "filecoin",
     "fil",
     "wfil",
-    'zora',
-    'scroll',
-    'evm',
-    'wan',
-    'wwan',
-    'movr',
-    'wmovr',
-    'glmr',
-    'wglmr',
-    'metis',
-    'wmetis',
-    'one',
-    'wone',
-    'canto',
-    'wcanto'
+    "zora",
+    "scroll",
+    "evm",
+    "wan",
+    "wwan",
+    "movr",
+    "wmovr",
+    "glmr",
+    "wglmr",
+    "metis",
+    "wmetis",
+    "one",
+    "wone",
+    "canto",
+    "wcanto",
   ],
   title: "CandyWrap",
   description:

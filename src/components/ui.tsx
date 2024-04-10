@@ -18,6 +18,8 @@ import {
 import { useEffect, useMemo, useState } from "react";
 import { ConnectKitButton } from "connectkit";
 import { useRouter, usePathname } from "next/navigation";
+import { ArrowsUpDownIcon } from "./arrows-up-down-icon";
+import { ChevronDownIcon } from "./chevron-down-icon";
 
 export default function Ui({ chain }: { chain: string }) {
   const [inputEthAmount, setInputEthAmount] = useState("");
@@ -92,21 +94,7 @@ export default function Ui({ chain }: { chain: string }) {
                   height={24}
                 />
                 <span className="w-full text-center">{currentChain?.name}</span>
-                <svg
-                  className="w-4 h-4 ms-3"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 10 6"
-                >
-                  <path
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="m1 1 4 4 4-4"
-                  />
-                </svg>
+                <ChevronDownIcon className="w-4 h-4 ms-3" />
               </div>
             </button>
             <div
@@ -238,20 +226,7 @@ export default function Ui({ chain }: { chain: string }) {
       </div>
 
       <div className="bg-accent my-4 text-black rounded-full h-16 w-16 flex items-center justify-center">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          strokeWidth={1.5}
-          stroke="currentColor"
-          className="w-12 h-12 my-3"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M3 7.5 7.5 3m0 0L12 7.5M7.5 3v13.5m13.5 0L16.5 21m0 0L12 16.5m4.5 4.5V7.5"
-          />
-        </svg>
+        <ArrowsUpDownIcon className="w-12 h-12 my-3"/>
       </div>
 
       <div className="card max-w-96 w-full bg-base-100 shadow-xl mt-3 mb-6">
