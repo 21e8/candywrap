@@ -105,7 +105,7 @@ export default function Ui({ chain }: { chain: string }) {
               </div>
             </button>
             <div
-              className={`z-10 bg-white rounded-lg shadow w-60 dark:bg-gray-700 absolute top-[4.5rem] ${
+              className={`z-10 bg-white rounded-lg shadow-lg w-60 dark:bg-gray-700 absolute top-[4.5rem] ${
                 dropdownVisible ? "" : "hidden"
               }`}
             >
