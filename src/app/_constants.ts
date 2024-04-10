@@ -18,6 +18,9 @@ import {
   polygon,
   scroll,
   zora,
+  moonbeam,
+  moonriver,
+  polygonZkEvm,
 } from "viem/chains";
 import {
   WETH_MAINNET_ABI,
@@ -66,6 +69,12 @@ export const WETH_LINEA_ADDRESS: Address =
   "0xe5d7c2a44ffddf6b295a15c148167daaaf5cf34f";
 export const WMETIS_METIS_ADDRESS: Address =
   "0x75cb093E4D61d2A2e65D8e0BBb01DE8d89b53481";
+export const WGLMR_MOONBEAM_ADDRESS: Address =
+  "0xacc15dc74880c9944775448304b263d191c6077f";
+export const WMOVR_MOONRIVER_ADDRESS: Address =
+  "0x98878b06940ae243284ca214f92bb71a2b032b8a";
+export const WETH_POLYGONZKEVM_ADDRESS: Address =
+  "0x4F9A0e7FD2Bf6067db6994CF12E4495Df938E6e9";
 export const WETH_ADDRESSES: Record<number, Address> = {
   [mainnet.id]: WETH_MAINNET_ADDRESS,
   [blast.id]: WETH_BLAST_ADDRESS,
@@ -85,6 +94,9 @@ export const WETH_ADDRESSES: Record<number, Address> = {
   [harmony.id]: WONE_ONE_ADDRESS,
   [linea.id]: WETH_LINEA_ADDRESS,
   [metis.id]: WMETIS_METIS_ADDRESS,
+  [moonbeam.id]: WGLMR_MOONBEAM_ADDRESS,
+  [moonriver.id]: WMOVR_MOONRIVER_ADDRESS,
+  [polygonZkEvm.id]: WETH_POLYGONZKEVM_ADDRESS,
 };
 
 export const SUPPORTED_CHAINS = [
@@ -106,6 +118,9 @@ export const SUPPORTED_CHAINS = [
   harmony,
   linea,
   metis,
+  moonbeam,
+  moonriver,
+  polygonZkEvm,
 ] as const;
 export const SUPPORTED_CHAIN_IDS = SUPPORTED_CHAINS.map(
   (chain) => chain.id
@@ -119,6 +134,7 @@ export const LOGOS: Record<number, string> = {
   [mainnet.id]: "https://icons.llamao.fi/icons/chains/rsz_ethereum.jpg",
   [optimism.id]: "https://icons.llamao.fi/icons/chains/rsz_optimism.jpg",
   [polygon.id]: "https://icons.llamao.fi/icons/chains/rsz_polygon.jpg",
+  [polygonZkEvm.id]: "https://icons.llamao.fi/icons/chains/rsz_polygon.jpg",
   [filecoin.id]: "https://icons.llamao.fi/icons/chains/rsz_filecoin.jpg",
   [fuse.id]: "https://icons.llamao.fi/icons/chains/rsz_fuse.jpg",
   [fantom.id]: "https://icons.llamao.fi/icons/chains/rsz_fantom.jpg",
@@ -129,6 +145,8 @@ export const LOGOS: Record<number, string> = {
   [harmony.id]: "/logos/harmony.webp",
   [linea.id]: "https://icons.llamao.fi/icons/chains/rsz_linea.jpg",
   [metis.id]: "https://icons.llamao.fi/icons/chains/rsz_metis.jpg",
+  [moonbeam.id]: "https://icons.llamao.fi/icons/chains/rsz_moonbeam.jpg",
+  [moonriver.id]: "https://icons.llamao.fi/icons/chains/rsz_moonriver.jpg",
 };
 
 export const SYMBOLS: Record<number, string> = {
@@ -150,6 +168,9 @@ export const SYMBOLS: Record<number, string> = {
   [harmony.id]: harmony.nativeCurrency.symbol,
   [linea.id]: linea.nativeCurrency.symbol,
   [metis.id]: metis.nativeCurrency.symbol,
+  [moonbeam.id]: moonbeam.nativeCurrency.symbol,
+  [moonriver.id]: moonriver.nativeCurrency.symbol,
+  [polygonZkEvm.id]: polygonZkEvm.nativeCurrency.symbol,
 };
 
 export const NAMES: Record<number, string> = {
@@ -171,6 +192,9 @@ export const NAMES: Record<number, string> = {
   [harmony.id]: harmony.name,
   [linea.id]: linea.name,
   [metis.id]: metis.name,
+  [moonbeam.id]: moonbeam.name,
+  [moonriver.id]: moonriver.name,
+  [polygonZkEvm.id]: polygonZkEvm.name,
 };
 
 export const CHAIN_IDS: Record<number, string> = {
@@ -192,6 +216,9 @@ export const CHAIN_IDS: Record<number, string> = {
   [harmony.id]: "harmony",
   [linea.id]: "linea",
   [metis.id]: "metis",
+  [moonbeam.id]: "moonbeam",
+  [moonriver.id]: "moonriver",
+  [polygonZkEvm.id]: "polygonZkEvm",
 };
 
 export const CHAINS: Record<string, any> = {
@@ -213,6 +240,9 @@ export const CHAINS: Record<string, any> = {
   harmony: harmony,
   linea: linea,
   metis: metis,
+  moonbeam: moonbeam,
+  moonriver: moonriver,
+  polygonZkEvm: polygonZkEvm,
 };
 
 export const WETH_ABIS: Record<string, Abi> = {
@@ -234,6 +264,9 @@ export const WETH_ABIS: Record<string, Abi> = {
   [harmony.id]: WDEGEN_DEGEN_ABI,
   [linea.id]: WDEGEN_DEGEN_ABI,
   [metis.id]: WDEGEN_DEGEN_ABI,
+  [moonbeam.id]: WDEGEN_DEGEN_ABI,
+  [moonriver.id]: WDEGEN_DEGEN_ABI,
+  [polygonZkEvm.id]: WDEGEN_DEGEN_ABI,
 };
 
 export const IDS: Record<string, number> = {
@@ -255,6 +288,9 @@ export const IDS: Record<string, number> = {
   harmony: harmony.id,
   linea: linea.id,
   metis: metis.id,
+  moonbeam: moonbeam.id,
+  moonriver: moonriver.id,
+  polygonZkEvm: polygonZkEvm.id,
 };
 
 export const RPCS = {
@@ -277,4 +313,7 @@ export const RPCS = {
   [harmony.id]: http("https://1rpc.io/one	"),
   [linea.id]: http("https://linea.drpc.org"),
   [metis.id]: http("https://metis.drpc.org"),
+  [moonbeam.id]: http("https://moonbeam-rpc.publicnode.com"),
+  [moonriver.id]: http("https://moonriver-rpc.publicnode.com"),
+  [polygonZkEvm.id]: http("https://polygon-zkevm.drpc.org"),
 };
