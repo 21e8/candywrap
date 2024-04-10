@@ -1,4 +1,4 @@
-import { Abi, Address } from "viem";
+import { Abi, Address, http } from "viem";
 import {
   avalanche,
   base,
@@ -195,4 +195,21 @@ export const IDS: Record<string, number> = {
   fantom: fantom.id,
   zora: zora.id,
   scroll: scroll.id,
+};
+
+export const RPCS = {
+  // RPC URL for each chain
+  [avalanche.id]: http("https://avalanche.drpc.org"),
+  [base.id]: http("https://base-rpc.publicnode.com"),
+  [blast.id]: http("https://rpc.blast.io"),
+  [bsc.id]: http("https://bsc-rpc.publicnode.com"),
+  [degen.id]: http("https://rpc.degen.tips"),
+  [mainnet.id]: http(`https://ethereum-rpc.publicnode.com`),
+  [optimism.id]: http("https://optimism-rpc.publicnode.com"),
+  [polygon.id]: http("https://polygon-bor-rpc.publicnode.com"),
+  [filecoin.id]: http("https://filecoin.drpc.org"),
+  [fuse.id]: http("https://fuse.drpc.org"),
+  [fantom.id]: http("https://rpc3.fantom.network"),
+  [zora.id]: http("https://rpc.zora.energy"),
+  [scroll.id]: http("https://scroll.drpc.org"),
 };

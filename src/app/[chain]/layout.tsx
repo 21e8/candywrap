@@ -6,7 +6,7 @@ type Props = {
   params: { chain: string };
 };
 
-export const config = {
+const config = {
   author: "0xAlice",
   githubRepo: "https://github.com/21e8/candywrap",
   twitter: "https://twitter.com/thereal0xalice",
