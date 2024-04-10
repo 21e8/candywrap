@@ -11,8 +11,19 @@ import {
   mainnet,
   optimism,
   polygon,
+  scroll,
+  zora,
 } from "viem/chains";
-import { WETH_MAINNET_ABI, WETH_BLAST_ABI, WETH_OP_ABI, WMATIC_POLYGON_ABI, WAVAX_AVAX_ABI, WETH_BASE_ABI, WBNB_BSC_ABI, WDEGEN_DEGEN_ABI } from "./_abis";
+import {
+  WETH_MAINNET_ABI,
+  WETH_BLAST_ABI,
+  WETH_OP_ABI,
+  WMATIC_POLYGON_ABI,
+  WAVAX_AVAX_ABI,
+  WETH_BASE_ABI,
+  WBNB_BSC_ABI,
+  WDEGEN_DEGEN_ABI,
+} from "./_abis";
 
 export const WETH_BLAST_ADDRESS: Address =
   "0x4300000000000000000000000000000000000004";
@@ -21,6 +32,8 @@ export const WETH_MAINNET_ADDRESS: Address =
 export const WETH_OP_ADDRESS: Address =
   "0x4200000000000000000000000000000000000006";
 export const WETH_BASE_ADDRESS: Address =
+  "0x4200000000000000000000000000000000000006";
+export const WETH_ZORA_ADDRESS: Address =
   "0x4200000000000000000000000000000000000006";
 export const WMATIC_POLYGON_ADDRESS: Address =
   "0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270";
@@ -32,8 +45,12 @@ export const WDEGEN_DEGEN_ADDRESS: Address =
   "0xEb54dACB4C2ccb64F8074eceEa33b5eBb38E5387";
 export const FILECOIN_WFIL_ADDRESS: Address =
   "0x60E1773636CF5E4A227d9AC24F20fEca034ee25A";
-export const FANTOM_WFTM_ADDRESS: Address = "0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83";
-export const FUSE_WFUSE_ADDRESS: Address = "0x0BE9e53fd7EDaC9F859882AfdDa116645287C629";
+export const FANTOM_WFTM_ADDRESS: Address =
+  "0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83";
+export const FUSE_WFUSE_ADDRESS: Address =
+  "0x0BE9e53fd7EDaC9F859882AfdDa116645287C629";
+export const WETH_SCROLL_ADDRESS: Address =
+  "0x5300000000000000000000000000000000000004";
 export const WETH_ADDRESSES: Record<number, Address> = {
   [mainnet.id]: WETH_MAINNET_ADDRESS,
   [blast.id]: WETH_BLAST_ADDRESS,
@@ -45,7 +62,9 @@ export const WETH_ADDRESSES: Record<number, Address> = {
   [degen.id]: WDEGEN_DEGEN_ADDRESS,
   [filecoin.id]: FILECOIN_WFIL_ADDRESS,
   [fantom.id]: FANTOM_WFTM_ADDRESS,
-  [fuse.id]: FUSE_WFUSE_ADDRESS
+  [fuse.id]: FUSE_WFUSE_ADDRESS,
+  [zora.id]: WETH_ZORA_ADDRESS,
+  [scroll.id]: WETH_ZORA_ADDRESS,
 };
 
 export const SUPPORTED_CHAINS = [
@@ -59,7 +78,9 @@ export const SUPPORTED_CHAINS = [
   degen,
   filecoin,
   fuse,
-  fantom
+  fantom,
+  zora,
+  scroll,
 ] as const;
 export const SUPPORTED_CHAIN_IDS = SUPPORTED_CHAINS.map(
   (chain) => chain.id
@@ -76,6 +97,8 @@ export const LOGOS: Record<number, string> = {
   [filecoin.id]: "https://icons.llamao.fi/icons/chains/rsz_filecoin.jpg",
   [fuse.id]: "https://icons.llamao.fi/icons/chains/rsz_fuse.jpg",
   [fantom.id]: "https://icons.llamao.fi/icons/chains/rsz_fantom.jpg",
+  [zora.id]: "/logos/zora.png",
+  [scroll.id]: "/logos/scroll.png",
 };
 
 export const SYMBOLS: Record<number, string> = {
@@ -90,6 +113,8 @@ export const SYMBOLS: Record<number, string> = {
   [filecoin.id]: filecoin.nativeCurrency.symbol,
   [fuse.id]: fuse.nativeCurrency.symbol,
   [fantom.id]: fantom.nativeCurrency.symbol,
+  [zora.id]: zora.nativeCurrency.symbol,
+  [scroll.id]: scroll.nativeCurrency.symbol,
 };
 
 export const NAMES: Record<number, string> = {
@@ -104,6 +129,8 @@ export const NAMES: Record<number, string> = {
   [filecoin.id]: filecoin.name,
   [fuse.id]: fuse.name,
   [fantom.id]: fantom.name,
+  [zora.id]: zora.name,
+  [scroll.id]: scroll.name,
 };
 
 export const CHAIN_IDS: Record<number, string> = {
@@ -118,6 +145,8 @@ export const CHAIN_IDS: Record<number, string> = {
   [filecoin.id]: "filecoin",
   [fuse.id]: "fuse",
   [fantom.id]: "fantom",
+  [zora.id]: "zora",
+  [scroll.id]: "scroll",
 };
 
 export const CHAINS: Record<string, any> = {
@@ -132,6 +161,8 @@ export const CHAINS: Record<string, any> = {
   filecoin: filecoin,
   fuse: fuse,
   fantom: fantom,
+  zora: zora,
+  scroll: scroll,
 };
 
 export const WETH_ABIS: Record<string, Abi> = {
@@ -146,6 +177,8 @@ export const WETH_ABIS: Record<string, Abi> = {
   [filecoin.id]: WDEGEN_DEGEN_ABI,
   [fuse.id]: WDEGEN_DEGEN_ABI,
   [fantom.id]: WDEGEN_DEGEN_ABI,
+  [zora.id]: WDEGEN_DEGEN_ABI,
+  [scroll.id]: WDEGEN_DEGEN_ABI,
 };
 
 export const IDS: Record<string, number> = {
@@ -160,4 +193,6 @@ export const IDS: Record<string, number> = {
   filecoin: filecoin.id,
   fuse: fuse.id,
   fantom: fantom.id,
+  zora: zora.id,
+  scroll: scroll.id,
 };

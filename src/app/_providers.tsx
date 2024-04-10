@@ -13,6 +13,8 @@ import {
   filecoin,
   fuse,
   fantom,
+  zora,
+  scroll,
 } from "wagmi/chains";
 import { ConnectKitProvider, getDefaultConfig } from "connectkit";
 import { SUPPORTED_CHAINS } from "./_constants";
@@ -37,6 +39,8 @@ export const config = createConfig(
       [filecoin.id]: http("https://filecoin.drpc.org"),
       [fuse.id]: http("https://fuse.drpc.org"),
       [fantom.id]: http("https://rpc3.fantom.network"),
+      [zora.id]: http("https://rpc.zora.energy"),
+      [scroll.id]: http("https://scroll.drpc.org"),
     },
 
     // Required API Keys

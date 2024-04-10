@@ -41,6 +41,9 @@ export const BASE_METADATA = {
     "filecoin",
     "fil",
     "wfil",
+    'zora',
+    'scroll',
+    'evm',
   ],
   title: "CandyWrap",
   description:
