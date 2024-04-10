@@ -3,6 +3,8 @@ const nextConfig = {
   images: {
     domains: ["icons.llamao.fi"],
   },
+  // distDir: "build",
+  // output: 'export',
   redirects: async () => {
     return [
       {

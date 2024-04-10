@@ -23,6 +23,7 @@ import {
   polygonZkEvm,
   zkSync,
   wanchain,
+  boba,
 } from "viem/chains";
 import {
   WETH_MAINNET_ABI,
@@ -81,6 +82,8 @@ export const WETH_ZKSYNC_ADDRESS: Address =
   "0x5aea5775959fbc2557cc8789bc1bf90a239d9a91";
 export const WWAN_WAN_ADDRESS: Address =
   "0xdabd997ae5e4799be47d6e69d9431615cba28f48";
+export const WETH_BOBA_ADDRESS: Address =
+  "0xDeadDeAddeAddEAddeadDEaDDEAdDeaDDeAD0000";
 export const WETH_ADDRESSES: Record<number, Address> = {
   [mainnet.id]: WETH_MAINNET_ADDRESS,
   [blast.id]: WETH_BLAST_ADDRESS,
@@ -105,6 +108,7 @@ export const WETH_ADDRESSES: Record<number, Address> = {
   [polygonZkEvm.id]: WETH_POLYGONZKEVM_ADDRESS,
   [zkSync.id]: WETH_ZKSYNC_ADDRESS,
   [wanchain.id]: WWAN_WAN_ADDRESS,
+  [boba.id]: WETH_BOBA_ADDRESS,
 };
 
 export const SUPPORTED_CHAINS = [
@@ -131,6 +135,7 @@ export const SUPPORTED_CHAINS = [
   polygonZkEvm,
   zkSync,
   wanchain,
+  boba,
 ] as const;
 export const SUPPORTED_CHAIN_IDS = SUPPORTED_CHAINS.map(
   (chain) => chain.id
@@ -159,6 +164,7 @@ export const LOGOS: Record<number, string> = {
   [moonriver.id]: "https://icons.llamao.fi/icons/chains/rsz_moonriver.jpg",
   [zkSync.id]: "/logos/zksync.png",
   [wanchain.id]: "https://icons.llamao.fi/icons/chains/rsz_wanchain.jpg",
+  [boba.id]: "https://icons.llamao.fi/icons/chains/rsz_boba.jpg",
 };
 
 export const SYMBOLS: Record<number, string> = {
@@ -185,6 +191,7 @@ export const SYMBOLS: Record<number, string> = {
   [polygonZkEvm.id]: polygonZkEvm.nativeCurrency.symbol,
   [zkSync.id]: zkSync.nativeCurrency.symbol,
   [wanchain.id]: wanchain.nativeCurrency.symbol,
+  [boba.id]: 'ETH',
 };
 
 export const NAMES: Record<number, string> = {
@@ -211,6 +218,7 @@ export const NAMES: Record<number, string> = {
   [polygonZkEvm.id]: polygonZkEvm.name,
   [zkSync.id]: zkSync.name,
   [wanchain.id]: wanchain.name,
+  [boba.id]: boba.name,
 };
 
 export const CHAIN_IDS: Record<number, string> = {
@@ -237,6 +245,7 @@ export const CHAIN_IDS: Record<number, string> = {
   [polygonZkEvm.id]: "polygonZkEvm",
   [zkSync.id]: "zkSync",
   [wanchain.id]: "wanchain",
+  [boba.id]: "boba",
 };
 
 export const CHAINS: Record<string, any> = {
@@ -263,6 +272,7 @@ export const CHAINS: Record<string, any> = {
   polygonZkEvm: polygonZkEvm,
   zkSync: zkSync,
   wanchain: wanchain,
+  boba: boba,
 };
 
 export const WETH_ABIS: Record<string, Abi> = {
@@ -289,6 +299,7 @@ export const WETH_ABIS: Record<string, Abi> = {
   [polygonZkEvm.id]: WDEGEN_DEGEN_ABI,
   [zkSync.id]: WDEGEN_DEGEN_ABI,
   [wanchain.id]: WDEGEN_DEGEN_ABI,
+  [boba.id]: WDEGEN_DEGEN_ABI,
 };
 
 export const IDS: Record<string, number> = {
@@ -315,6 +326,7 @@ export const IDS: Record<string, number> = {
   polygonZkEvm: polygonZkEvm.id,
   zkSync: zkSync.id,
   wanchain: wanchain.id,
+  boba: boba.id,
 };
 
 export const RPCS = {
@@ -342,4 +354,5 @@ export const RPCS = {
   [polygonZkEvm.id]: http("https://polygon-zkevm.drpc.org"),
   [zkSync.id]: http("https://zksync.meowrpc.com"),
   [wanchain.id]: http("https://gwan-ssl.wandevs.org:56891"),
+  [boba.id]: http("https://gateway.tenderly.co/public/boba-ethereum"),
 };

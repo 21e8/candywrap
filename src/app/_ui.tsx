@@ -40,6 +40,9 @@ export default function Ui({ chain }: { chain: string }) {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [chainId, pathname]);
+
+  const actualSymbol = SYMBOLS[IDS[chain]] || SYMBOLS[chainId] || "ETH";
+
   return (
     <>
       <ConnectKitButton />
@@ -120,11 +123,10 @@ export default function Ui({ chain }: { chain: string }) {
       <div className="card max-w-96 w-full bg-base-100 shadow-xl mb-3">
         <div className="card-body">
           <h2 className="card-title mb-6 w-full text-center block">
-            Wrap {balance.data?.symbol || SYMBOLS[IDS[chain]] || "ETH"}
+            Wrap {actualSymbol}
           </h2>
           <p className="hidden">
-            Wrap {balance.data?.symbol || SYMBOLS[IDS[chain]] || "ETH"} to W
-            {balance.data?.symbol || SYMBOLS[IDS[chain]] || "ETH"}
+            Wrap {actualSymbol} to W{actualSymbol}
           </p>
           <input
             value={inputEthAmount}
@@ -200,11 +202,11 @@ export default function Ui({ chain }: { chain: string }) {
       <div className="card max-w-96 w-full bg-base-100 shadow-xl mt-3 mb-6">
         <div className="card-body">
           <h2 className="card-title mb-6 w-full text-center block">
-            Unwrap {balance.data?.symbol || SYMBOLS[IDS[chain]] || "ETH"}
+            Unwrap W{actualSymbol}
           </h2>
           <p className="hidden">
-            Unwrap W{balance.data?.symbol || SYMBOLS[IDS[chain]] || "ETH"} to
-            {balance.data?.symbol || SYMBOLS[IDS[chain]] || "ETH"}
+            Unwrap W{actualSymbol} to
+            {actualSymbol}
           </p>
           <input
             value={inputWethAmount}
