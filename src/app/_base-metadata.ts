@@ -44,6 +44,18 @@ export const BASE_METADATA = {
     'zora',
     'scroll',
     'evm',
+    'wan',
+    'wwan',
+    'movr',
+    'wmovr',
+    'glmr',
+    'wglmr',
+    'metis',
+    'wmetis',
+    'one',
+    'wone',
+    'canto',
+    'wcanto'
   ],
   title: "CandyWrap",
   description:

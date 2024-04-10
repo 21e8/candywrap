@@ -21,6 +21,8 @@ import {
   moonbeam,
   moonriver,
   polygonZkEvm,
+  zkSync,
+  wanchain,
 } from "viem/chains";
 import {
   WETH_MAINNET_ABI,
@@ -75,6 +77,10 @@ export const WMOVR_MOONRIVER_ADDRESS: Address =
   "0x98878b06940ae243284ca214f92bb71a2b032b8a";
 export const WETH_POLYGONZKEVM_ADDRESS: Address =
   "0x4F9A0e7FD2Bf6067db6994CF12E4495Df938E6e9";
+export const WETH_ZKSYNC_ADDRESS: Address =
+  "0x5aea5775959fbc2557cc8789bc1bf90a239d9a91";
+export const WWAN_WAN_ADDRESS: Address =
+  "0xdabd997ae5e4799be47d6e69d9431615cba28f48";
 export const WETH_ADDRESSES: Record<number, Address> = {
   [mainnet.id]: WETH_MAINNET_ADDRESS,
   [blast.id]: WETH_BLAST_ADDRESS,
@@ -97,6 +103,8 @@ export const WETH_ADDRESSES: Record<number, Address> = {
   [moonbeam.id]: WGLMR_MOONBEAM_ADDRESS,
   [moonriver.id]: WMOVR_MOONRIVER_ADDRESS,
   [polygonZkEvm.id]: WETH_POLYGONZKEVM_ADDRESS,
+  [zkSync.id]: WETH_ZKSYNC_ADDRESS,
+  [wanchain.id]: WWAN_WAN_ADDRESS,
 };
 
 export const SUPPORTED_CHAINS = [
@@ -121,6 +129,8 @@ export const SUPPORTED_CHAINS = [
   moonbeam,
   moonriver,
   polygonZkEvm,
+  zkSync,
+  wanchain,
 ] as const;
 export const SUPPORTED_CHAIN_IDS = SUPPORTED_CHAINS.map(
   (chain) => chain.id
@@ -147,6 +157,8 @@ export const LOGOS: Record<number, string> = {
   [metis.id]: "https://icons.llamao.fi/icons/chains/rsz_metis.jpg",
   [moonbeam.id]: "https://icons.llamao.fi/icons/chains/rsz_moonbeam.jpg",
   [moonriver.id]: "https://icons.llamao.fi/icons/chains/rsz_moonriver.jpg",
+  [zkSync.id]: "/logos/zksync.png",
+  [wanchain.id]: "https://icons.llamao.fi/icons/chains/rsz_wanchain.jpg",
 };
 
 export const SYMBOLS: Record<number, string> = {
@@ -171,6 +183,8 @@ export const SYMBOLS: Record<number, string> = {
   [moonbeam.id]: moonbeam.nativeCurrency.symbol,
   [moonriver.id]: moonriver.nativeCurrency.symbol,
   [polygonZkEvm.id]: polygonZkEvm.nativeCurrency.symbol,
+  [zkSync.id]: zkSync.nativeCurrency.symbol,
+  [wanchain.id]: wanchain.nativeCurrency.symbol,
 };
 
 export const NAMES: Record<number, string> = {
@@ -195,6 +209,8 @@ export const NAMES: Record<number, string> = {
   [moonbeam.id]: moonbeam.name,
   [moonriver.id]: moonriver.name,
   [polygonZkEvm.id]: polygonZkEvm.name,
+  [zkSync.id]: zkSync.name,
+  [wanchain.id]: wanchain.name,
 };
 
 export const CHAIN_IDS: Record<number, string> = {
@@ -219,6 +235,8 @@ export const CHAIN_IDS: Record<number, string> = {
   [moonbeam.id]: "moonbeam",
   [moonriver.id]: "moonriver",
   [polygonZkEvm.id]: "polygonZkEvm",
+  [zkSync.id]: "zkSync",
+  [wanchain.id]: "wanchain",
 };
 
 export const CHAINS: Record<string, any> = {
@@ -243,6 +261,8 @@ export const CHAINS: Record<string, any> = {
   moonbeam: moonbeam,
   moonriver: moonriver,
   polygonZkEvm: polygonZkEvm,
+  zkSync: zkSync,
+  wanchain: wanchain,
 };
 
 export const WETH_ABIS: Record<string, Abi> = {
@@ -267,6 +287,8 @@ export const WETH_ABIS: Record<string, Abi> = {
   [moonbeam.id]: WDEGEN_DEGEN_ABI,
   [moonriver.id]: WDEGEN_DEGEN_ABI,
   [polygonZkEvm.id]: WDEGEN_DEGEN_ABI,
+  [zkSync.id]: WDEGEN_DEGEN_ABI,
+  [wanchain.id]: WDEGEN_DEGEN_ABI,
 };
 
 export const IDS: Record<string, number> = {
@@ -291,6 +313,8 @@ export const IDS: Record<string, number> = {
   moonbeam: moonbeam.id,
   moonriver: moonriver.id,
   polygonZkEvm: polygonZkEvm.id,
+  zkSync: zkSync.id,
+  wanchain: wanchain.id,
 };
 
 export const RPCS = {
@@ -316,4 +340,6 @@ export const RPCS = {
   [moonbeam.id]: http("https://moonbeam-rpc.publicnode.com"),
   [moonriver.id]: http("https://moonriver-rpc.publicnode.com"),
   [polygonZkEvm.id]: http("https://polygon-zkevm.drpc.org"),
+  [zkSync.id]: http("https://zksync.meowrpc.com"),
+  [wanchain.id]: http("https://gwan-ssl.wandevs.org:56891"),
 };
