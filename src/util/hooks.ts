@@ -6,9 +6,10 @@ import {
   useWaitForTransactionReceipt,
   useWriteContract,
 } from "wagmi";
-import { SUPPORTED_CHAIN_IDS, WETH_ABIS, WETH_ADDRESSES } from "./_constants";
+import { SUPPORTED_CHAIN_IDS, WETH_ADDRESSES } from "./constants";
 import { useEffect, useRef } from "react";
 import { TypedContractRead } from "@/types/typed-contract-read";
+import { WRAP_ABI } from "./abi";
 
 export function useWriteUnwrapWeth({ amountWei }: { amountWei: bigint }) {
   const { address } = useAccount();
@@ -34,7 +35,7 @@ export function useWriteUnwrapWeth({ amountWei }: { amountWei: bigint }) {
     if (!address) return;
     writeContract({
       address: WETH_ADDRESSES[chainId],
-      abi: WETH_ABIS[chainId],
+      abi: WRAP_ABI,
       functionName: "withdraw",
       args: [amountWei],
       account: address,
@@ -82,7 +83,7 @@ export function useWriteWrapWeth({ amountWei }: { amountWei: bigint }) {
     if (!address) return;
     writeContract({
       address: WETH_ADDRESSES[chainId],
-      abi: WETH_ABIS[chainId],
+      abi: WRAP_ABI,
       functionName: "deposit",
       args: [],
       value: amountWei,
@@ -113,7 +114,7 @@ export const useWethBalance = () => {
   const chainId = useChainId();
   return useReadContract({
     address: WETH_ADDRESSES[chainId],
-    abi: WETH_ABIS[chainId],
+    abi: WRAP_ABI,
     functionName: "balanceOf",
     args: [address || "0x0"],
     chainId: chainId,

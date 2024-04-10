@@ -25,7 +25,7 @@ import {
   wanchain,
   boba,
 } from "viem/chains";
-import { WRAP_ABI } from "./_abis";
+import { WRAP_ABI } from "./abi";
 
 export const WETH_BLAST_ADDRESS: Address =
   "0x4300000000000000000000000000000000000004";
@@ -266,33 +266,6 @@ export const CHAINS: Record<string, any> = {
   boba: boba,
 };
 
-export const WETH_ABIS: Record<string, Abi> = {
-  [mainnet.id]: WRAP_ABI,
-  [blast.id]: WRAP_ABI,
-  [optimism.id]: WRAP_ABI,
-  [polygon.id]: WRAP_ABI,
-  [avalanche.id]: WRAP_ABI,
-  [base.id]: WRAP_ABI,
-  [bsc.id]: WRAP_ABI,
-  [degen.id]: WRAP_ABI,
-  [filecoin.id]: WRAP_ABI,
-  [fuse.id]: WRAP_ABI,
-  [fantom.id]: WRAP_ABI,
-  [zora.id]: WRAP_ABI,
-  [scroll.id]: WRAP_ABI,
-  [aurora.id]: WRAP_ABI,
-  [canto.id]: WRAP_ABI,
-  [harmony.id]: WRAP_ABI,
-  [linea.id]: WRAP_ABI,
-  [metis.id]: WRAP_ABI,
-  [moonbeam.id]: WRAP_ABI,
-  [moonriver.id]: WRAP_ABI,
-  [polygonZkEvm.id]: WRAP_ABI,
-  [zkSync.id]: WRAP_ABI,
-  [wanchain.id]: WRAP_ABI,
-  [boba.id]: WRAP_ABI,
-};
-
 export const IDS: Record<string, number> = {
   blast: blast.id,
   base: base.id,
@@ -345,4 +318,68 @@ export const RPCS = {
   [zkSync.id]: http("https://zksync.meowrpc.com"),
   [wanchain.id]: http("https://gwan-ssl.wandevs.org:56891"),
   [boba.id]: http("https://gateway.tenderly.co/public/boba-ethereum"),
+};
+
+export const BASE_METADATA = {
+  authors: [{ name: "0xAlice" }],
+  category: "Finance",
+  creator: "0xAlice",
+  keywords: [
+    "wrap",
+    "unwrap",
+    "token",
+    "exchange",
+    "defi",
+    "candywrap",
+    "candy",
+    "swap",
+    "wrapped",
+    "eth",
+    "erc20",
+    "ethereum",
+    "smart contract",
+    "wrapeth",
+    "optimism",
+    "arbitrum",
+    "polygon",
+    "bsc",
+    "avalanche",
+    "avax",
+    "wavax",
+    "degen",
+    "wdegen",
+    "chain",
+    "avax",
+    "wavax",
+    "matic",
+    "wmatic",
+    "bnb",
+    "binance",
+    "smartchain",
+    "fuse",
+    "fantom",
+    "ftm",
+    "wftm",
+    "filecoin",
+    "fil",
+    "wfil",
+    'zora',
+    'scroll',
+    'evm',
+    'wan',
+    'wwan',
+    'movr',
+    'wmovr',
+    'glmr',
+    'wglmr',
+    'metis',
+    'wmetis',
+    'one',
+    'wone',
+    'canto',
+    'wcanto'
+  ],
+  title: "CandyWrap",
+  description:
+    "Wrap and unwrap your ETH/wETH in a few clicks right from your wallet. Supports multiple chains. Instead of swapping for a high fee use this instead. Convert now on Ethereum!",
 };

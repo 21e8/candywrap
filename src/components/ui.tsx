@@ -7,14 +7,14 @@ import {
   useChains,
   useSwitchChain,
 } from "wagmi";
-import { IDS, LOGOS, CHAIN_IDS, SUPPORTED_CHAINS, SYMBOLS } from "./_constants";
+import { IDS, LOGOS, CHAIN_IDS, SUPPORTED_CHAINS, SYMBOLS } from "../util/constants";
 import { formatEther, parseEther } from "viem";
 import {
   useOutsideClick,
   useWethBalance,
   useWriteUnwrapWeth,
   useWriteWrapWeth,
-} from "./_hooks";
+} from "../util/hooks";
 import { useEffect, useMemo, useState } from "react";
 import { ConnectKitButton } from "connectkit";
 import { useRouter, usePathname } from "next/navigation";

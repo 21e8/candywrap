@@ -1,5 +1,5 @@
 import { Logo } from "@/components/logo";
-import Ui from "./_ui";
+import Ui from "../components/ui";
 
 export default function Home() {
   return (

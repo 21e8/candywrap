@@ -1,5 +1,5 @@
-import Ui from "../_ui";
-import { CHAINS, IDS, SYMBOLS } from "../_constants";
+import Ui from "../../components/ui";
+import { CHAINS, IDS, SYMBOLS } from "../../util/constants";
 import { Logo } from "@/components/logo";
 
 export default function Home({ params }: { params: { chain: string } }) {

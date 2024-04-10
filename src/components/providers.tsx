@@ -2,8 +2,8 @@
 import { WagmiProvider, createConfig } from "wagmi";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ConnectKitProvider, getDefaultConfig } from "connectkit";
-import { RPCS, SUPPORTED_CHAINS } from "./_constants";
-import { ToastProvider } from "./_toast-provider";
+import { RPCS, SUPPORTED_CHAINS } from "../util/constants";
+import { ToastProvider } from "../context/toast-provider";
 
 const queryClient = new QueryClient();
 

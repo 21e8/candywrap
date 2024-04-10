@@ -1,6 +1,5 @@
 import type { Metadata, ResolvingMetadata } from "next";
-import { BASE_METADATA } from "../_base-metadata";
-import { IDS, CHAIN_IDS, SYMBOLS, NAMES } from "../_constants";
+import { IDS, CHAIN_IDS, SYMBOLS, NAMES, BASE_METADATA } from "../../util/constants";
 
 type Props = {
   params: { chain: string };
