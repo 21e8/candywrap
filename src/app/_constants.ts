@@ -191,7 +191,7 @@ export const SYMBOLS: Record<number, string> = {
   [polygonZkEvm.id]: polygonZkEvm.nativeCurrency.symbol,
   [zkSync.id]: zkSync.nativeCurrency.symbol,
   [wanchain.id]: wanchain.nativeCurrency.symbol,
-  [boba.id]: 'ETH',
+  [boba.id]: "ETH",
 };
 
 export const NAMES: Record<number, string> = {

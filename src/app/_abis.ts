@@ -1,18 +1,3 @@
-import { Abi } from "viem";
-import {
-  avalanche,
-  base,
-  blast,
-  bsc,
-  degen,
-  fantom,
-  filecoin,
-  fuse,
-  mainnet,
-  optimism,
-  polygon,
-} from "viem/chains";
-
 export const WETH_BLAST_ABI = [
   { inputs: [], stateMutability: "nonpayable", type: "constructor" },
   { inputs: [], name: "ApproveFromZeroAddress", type: "error" },
