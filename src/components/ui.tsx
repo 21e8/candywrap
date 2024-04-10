@@ -7,7 +7,13 @@ import {
   useChains,
   useSwitchChain,
 } from "wagmi";
-import { IDS, LOGOS, CHAIN_IDS, SUPPORTED_CHAINS, SYMBOLS } from "../util/constants";
+import {
+  IDS,
+  LOGOS,
+  CHAIN_IDS,
+  SUPPORTED_CHAINS,
+  SYMBOLS,
+} from "../util/constants";
 import { formatEther, parseEther } from "viem";
 import {
   useOutsideClick,
@@ -54,17 +60,18 @@ export default function Ui({ chain }: { chain: string }) {
   const actualSymbol = SYMBOLS[IDS[chain]] || SYMBOLS[chainId] || "ETH";
 
   const filteredChains = useMemo(() => {
-    if (searchString.trim() === "") return SUPPORTED_CHAINS;
+    if (searchString.trim() === "") return SUPPORTED_CHAINS.filter((chain) => chain.id !== chainId);
     return SUPPORTED_CHAINS.filter((chain) => {
       return (
-        chain.name.toLowerCase().includes(searchString.toLowerCase()) ||
-        `${chain.id}`.toLowerCase().includes(searchString.toLowerCase()) ||
-        chain.nativeCurrency.symbol
-          .toLowerCase()
-          .includes(searchString.toLowerCase())
+        chain.id !== chainId &&
+        (chain.name.toLowerCase().includes(searchString.toLowerCase()) ||
+          `${chain.id}`.toLowerCase().includes(searchString.toLowerCase()) ||
+          chain.nativeCurrency.symbol
+            .toLowerCase()
+            .includes(searchString.toLowerCase()))
       );
     });
-  }, [searchString]);
+  }, [chainId, searchString]);
 
   return (
     <>
@@ -226,7 +233,7 @@ export default function Ui({ chain }: { chain: string }) {
       </div>
 
       <div className="bg-accent my-4 text-black rounded-full h-16 w-16 flex items-center justify-center">
-        <ArrowsUpDownIcon className="w-12 h-12 my-3"/>
+        <ArrowsUpDownIcon className="w-12 h-12 my-3" />
       </div>
 
       <div className="card max-w-96 w-full bg-base-100 shadow-xl mt-3 mb-6">
