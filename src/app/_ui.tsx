@@ -15,7 +15,7 @@ import {
   useWriteUnwrapWeth,
   useWriteWrapWeth,
 } from "./_hooks";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { ConnectKitButton } from "connectkit";
 import { useRouter, usePathname } from "next/navigation";
 
@@ -182,88 +182,13 @@ export default function Ui({ chain }: { chain: string }) {
           </div>
         </div>
       </>
-
-      {/* <div className="dropdown mt-3 mb-8 w-[200px]">
-        <div tabIndex={0} role="button" className="btn m-1 w-full">
-          <div className="w-full grid grid-cols-1-4-1 items-center">
-            <Image
-              src={LOGOS[chainId]}
-              className="rounded-full mr-4"
-              alt="Chain"
-              width={24}
-              height={24}
-            />
-
-            <span className="w-full text-center">{currentChain?.name}</span>
-
-            <div className="flex flex-row justify-end items-center">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="w-4 h-4"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="m19.5 8.25-7.5 7.5-7.5-7.5"
-                />
-              </svg>
-            </div>
-          </div>
-        </div>
-        <ul
-          tabIndex={0}
-          className="dropdown-content border border-base-300 z-[1] menu p-2 shadow-lg bg-base-100 rounded-box w-52"
-        >
-          {SUPPORTED_CHAINS.map((chain) => (
-            <li
-              onClick={() => switchChain({ chainId: chain.id })}
-              key={chain.id}
-              className="flex"
-            >
-              <a className="gap-4">
-                <Image
-                  src={LOGOS[chain.id]}
-                  className="rounded-full"
-                  alt="Chain"
-                  width={24}
-                  height={24}
-                />
-                <h2 className="font-bold">{chain.name}</h2>
-
-                {chainId === chain.id ? (
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={1.5}
-                    stroke="currentColor"
-                    className="w-6 h-6"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
-                    />
-                  </svg>
-                ) : (
-                  ""
-                )}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </div> */}
       <div className="card max-w-96 w-full bg-base-100 shadow-xl mb-3">
         <div className="card-body">
           <h2 className="card-title mb-6 w-full text-center block">
             Wrap {actualSymbol}
           </h2>
           <p className="hidden">
-            Wrap {actualSymbol} to W{actualSymbol}
+            Wrap {actualSymbol} to w{actualSymbol}
           </p>
           <input
             value={inputEthAmount}
@@ -339,10 +264,10 @@ export default function Ui({ chain }: { chain: string }) {
       <div className="card max-w-96 w-full bg-base-100 shadow-xl mt-3 mb-6">
         <div className="card-body">
           <h2 className="card-title mb-6 w-full text-center block">
-            Unwrap W{actualSymbol}
+            Unwrap w{actualSymbol}
           </h2>
           <p className="hidden">
-            Unwrap W{actualSymbol} to
+            Unwrap w{actualSymbol} to
             {actualSymbol}
           </p>
           <input

@@ -59,5 +59,5 @@ export const BASE_METADATA = {
   ],
   title: "CandyWrap",
   description:
-    "Wrap and unwrap your ETH/WETH in a few clicks right from your wallet. Supports multiple chains. Instead of swapping for a high fee use this instead. Convert now on Ethereum!",
+    "Wrap and unwrap your ETH/wETH in a few clicks right from your wallet. Supports multiple chains. Instead of swapping for a high fee use this instead. Convert now on Ethereum!",
 };
