@@ -25,16 +25,7 @@ import {
   wanchain,
   boba,
 } from "viem/chains";
-import {
-  WETH_MAINNET_ABI,
-  WETH_BLAST_ABI,
-  WETH_OP_ABI,
-  WMATIC_POLYGON_ABI,
-  WAVAX_AVAX_ABI,
-  WETH_BASE_ABI,
-  WBNB_BSC_ABI,
-  WDEGEN_DEGEN_ABI,
-} from "./_abis";
+import { WRAP_ABI } from "./_abis";
 
 export const WETH_BLAST_ADDRESS: Address =
   "0x4300000000000000000000000000000000000004";
@@ -46,6 +37,8 @@ export const WETH_BASE_ADDRESS: Address =
   "0x4200000000000000000000000000000000000006";
 export const WETH_ZORA_ADDRESS: Address =
   "0x4200000000000000000000000000000000000006";
+export const WETH_SCROLL_ADDRESS: Address =
+  "0x5300000000000000000000000000000000000004";
 export const WMATIC_POLYGON_ADDRESS: Address =
   "0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270";
 export const WAVAX_AVAX_ADDRESS: Address =
@@ -60,8 +53,6 @@ export const FANTOM_WFTM_ADDRESS: Address =
   "0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83";
 export const FUSE_WFUSE_ADDRESS: Address =
   "0x0BE9e53fd7EDaC9F859882AfdDa116645287C629";
-export const WETH_SCROLL_ADDRESS: Address =
-  "0x5300000000000000000000000000000000000004";
 export const WETH_AURORA_ADDRESS: Address =
   "0xC9BdeEd33CD01541e1eeD10f90519d2C06Fe3feB";
 export const WCANTO_CANTO_ADDRESS: Address =
@@ -97,7 +88,7 @@ export const WETH_ADDRESSES: Record<number, Address> = {
   [fantom.id]: FANTOM_WFTM_ADDRESS,
   [fuse.id]: FUSE_WFUSE_ADDRESS,
   [zora.id]: WETH_ZORA_ADDRESS,
-  [scroll.id]: WETH_ZORA_ADDRESS,
+  [scroll.id]: WETH_SCROLL_ADDRESS,
   [aurora.id]: WETH_AURORA_ADDRESS,
   [canto.id]: WCANTO_CANTO_ADDRESS,
   [harmony.id]: WONE_ONE_ADDRESS,
@@ -276,30 +267,30 @@ export const CHAINS: Record<string, any> = {
 };
 
 export const WETH_ABIS: Record<string, Abi> = {
-  [mainnet.id]: WETH_MAINNET_ABI,
-  [blast.id]: WETH_BLAST_ABI,
-  [optimism.id]: WETH_OP_ABI,
-  [polygon.id]: WMATIC_POLYGON_ABI,
-  [avalanche.id]: WAVAX_AVAX_ABI,
-  [base.id]: WETH_BASE_ABI,
-  [bsc.id]: WBNB_BSC_ABI,
-  [degen.id]: WDEGEN_DEGEN_ABI,
-  [filecoin.id]: WDEGEN_DEGEN_ABI,
-  [fuse.id]: WDEGEN_DEGEN_ABI,
-  [fantom.id]: WDEGEN_DEGEN_ABI,
-  [zora.id]: WDEGEN_DEGEN_ABI,
-  [scroll.id]: WDEGEN_DEGEN_ABI,
-  [aurora.id]: WDEGEN_DEGEN_ABI,
-  [canto.id]: WDEGEN_DEGEN_ABI,
-  [harmony.id]: WDEGEN_DEGEN_ABI,
-  [linea.id]: WDEGEN_DEGEN_ABI,
-  [metis.id]: WDEGEN_DEGEN_ABI,
-  [moonbeam.id]: WDEGEN_DEGEN_ABI,
-  [moonriver.id]: WDEGEN_DEGEN_ABI,
-  [polygonZkEvm.id]: WDEGEN_DEGEN_ABI,
-  [zkSync.id]: WDEGEN_DEGEN_ABI,
-  [wanchain.id]: WDEGEN_DEGEN_ABI,
-  [boba.id]: WDEGEN_DEGEN_ABI,
+  [mainnet.id]: WRAP_ABI,
+  [blast.id]: WRAP_ABI,
+  [optimism.id]: WRAP_ABI,
+  [polygon.id]: WRAP_ABI,
+  [avalanche.id]: WRAP_ABI,
+  [base.id]: WRAP_ABI,
+  [bsc.id]: WRAP_ABI,
+  [degen.id]: WRAP_ABI,
+  [filecoin.id]: WRAP_ABI,
+  [fuse.id]: WRAP_ABI,
+  [fantom.id]: WRAP_ABI,
+  [zora.id]: WRAP_ABI,
+  [scroll.id]: WRAP_ABI,
+  [aurora.id]: WRAP_ABI,
+  [canto.id]: WRAP_ABI,
+  [harmony.id]: WRAP_ABI,
+  [linea.id]: WRAP_ABI,
+  [metis.id]: WRAP_ABI,
+  [moonbeam.id]: WRAP_ABI,
+  [moonriver.id]: WRAP_ABI,
+  [polygonZkEvm.id]: WRAP_ABI,
+  [zkSync.id]: WRAP_ABI,
+  [wanchain.id]: WRAP_ABI,
+  [boba.id]: WRAP_ABI,
 };
 
 export const IDS: Record<string, number> = {
@@ -330,7 +321,6 @@ export const IDS: Record<string, number> = {
 };
 
 export const RPCS = {
-  // RPC URL for each chain
   [avalanche.id]: http("https://avalanche.drpc.org"),
   [base.id]: http("https://base-rpc.publicnode.com"),
   [blast.id]: http("https://rpc.blast.io"),
