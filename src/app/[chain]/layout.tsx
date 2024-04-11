@@ -73,6 +73,7 @@ export default function RootLayout({
             rel="noopener noreferrer"
             className="transition-colors hover:text-blue-400"
             href={config.githubRepo}
+            aria-label="Fork me on GitHub"
           >
             <i>
               <GithubIcon className="h-12 w-12" />
