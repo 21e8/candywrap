@@ -1,7 +1,7 @@
 {
   "name": "CandyWrap - Wrap and Unwrap Ether",
   "short_name": "CandyWrap",
-  "description": "CandyWrap is a simple DApp that allows you to wrap and unwrap Ether and other native currencies on over 20 chains.",
+  "description": "CandyWrap is a simple dApp that allows you to wrap and unwrap Ether and other native currencies on over 20 chains.",
   "display": "standalone",
   "start_url": "/ethereum",
   "theme_color": "#000000",
