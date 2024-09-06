@@ -6,7 +6,7 @@ export default function Home({ params }: { params: { chain: string } }) {
   const actualSymbol = SYMBOLS[IDS[params.chain]] || "ETH";
   return (
     <>
-      <div className="my-12 lg:mx-12 text-secondary">
+      <div className="my-12 lg:mx-12 text-secondary max-w-xl">
         <Logo />
       </div>
       <h1 className="text-2xl mt-4 lg:mt-8 mb-6 lg:mb-12 text-center hidden">

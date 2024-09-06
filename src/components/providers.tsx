@@ -20,7 +20,7 @@ export const config = createConfig(
     appName: "CandyWrap",
 
     // Optional App Info
-    appDescription: "Wrap and unwrap your ETH/WETH with ease",
+    appDescription: "Wrap and unwrap your ETH/wETH with ease",
     appUrl: "https://candywrap.dev", // your app's url
     // appIcon: "https://family.co/logo.png", // your app's icon, no bigger than 1024x1024px (max. 1MB)
     ssr: true,

@@ -4,7 +4,7 @@ import Ui from "../components/ui";
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center px-8 py-6 max-w-7xl mx-auto">
-      <div className="my-12 lg:mx-12 text-secondary">
+      <div className="my-12 lg:mx-12 text-secondary max-w-xl">
         <Logo />
       </div>
       <h1 className="text-2xl mt-4 lg:mt-8 mb-6 lg:mb-12 text-center hidden">

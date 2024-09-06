@@ -22,7 +22,9 @@ export async function generateMetadata(
   parent: ResolvingMetadata
 ): Promise<Metadata> {
   const { chain } = params;
-  const symb = chain === "boba" ? "BOBA" : SYMBOLS[IDS[chain]] === "" || "ETH";
+  const id = IDS[chain];
+  const symbol = SYMBOLS[id];
+  const symb = chain === "boba" ? "BOBA" : symbol || "ETH";
   const description = `Easily wrap and unwrap your ${symb} or w${symb} in a few clicks right from your wallet. Supports multiple chains. Instead of swapping for a high fee use this instead. Convert now on ${
     NAMES[IDS[chain]]
   }!`;

@@ -138,31 +138,35 @@ export default function Ui({ chain }: { chain: string }) {
                 />
               </div>
             </div>
-            <ul className="h-48 px-3 pb-3 overflow-y-auto text-sm text-gray-700 dark:text-gray-200">
-              {filteredChains.map((chain) => (
-                <li
-                  onClick={() => {
-                    setDropdownVisible(false);
-                    switchChain({ chainId: chain.id });
-                    setSearchString("");
-                  }}
-                  key={chain.id}
-                >
-                  <div className="flex items-center ps-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600 cursor-pointer">
-                    <Image
-                      src={LOGOS[chain.id]}
-                      className="rounded-full"
-                      alt="Chain"
-                      width={24}
-                      height={24}
-                    />
-                    <label className="w-full py-2 ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300 cursor-pointer">
-                      {chain.name}
-                    </label>
-                  </div>
-                </li>
-              ))}
-            </ul>
+            {filteredChains.length ? (
+              <ul className="h-48 px-3 pb-3 overflow-y-auto text-sm text-gray-700 dark:text-gray-200">
+                {filteredChains.map((chain) => (
+                  <li
+                    onClick={() => {
+                      setDropdownVisible(false);
+                      switchChain({ chainId: chain.id });
+                      setSearchString("");
+                    }}
+                    key={chain.id}
+                  >
+                    <div className="flex items-center ps-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600 cursor-pointer">
+                      <Image
+                        src={LOGOS[chain.id]}
+                        className="rounded-full"
+                        alt="Chain"
+                        width={24}
+                        height={24}
+                      />
+                      <label className="w-full py-2 ms-2 text-sm font-medium text-gray-900 rounded dark:text-gray-300 cursor-pointer">
+                        {chain.name}
+                      </label>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <></>
+            )}
           </div>
         </div>
       </div>
