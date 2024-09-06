@@ -26,6 +26,7 @@ import { ConnectKitButton } from "connectkit";
 import { useRouter, usePathname } from "next/navigation";
 import { ArrowsUpDownIcon } from "./arrows-up-down-icon";
 import { ChevronDownIcon } from "./chevron-down-icon";
+import Link from "next/link";
 
 export default function Ui({ chain }: { chain: string }) {
   const [inputEthAmount, setInputEthAmount] = useState("");
@@ -295,6 +296,15 @@ export default function Ui({ chain }: { chain: string }) {
           >
             Unwrap
           </button>
+        </div>
+        <div className="hidden">
+          {SUPPORTED_CHAINS.map((chain) => {
+            return (
+              <Link href={`/${CHAIN_IDS[chain.id]}`} key={chain.id}>
+                {chain.name}
+              </Link>
+            );
+          })}
         </div>
       </div>
     </>

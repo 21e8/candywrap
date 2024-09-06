@@ -1,5 +1,7 @@
 import { Logo } from "@/components/logo";
 import Ui from "../components/ui";
+import { CHAIN_IDS, SUPPORTED_CHAINS } from "@/util/constants";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -11,6 +13,15 @@ export default function Home() {
         Wrap/Unwrap ETH/ wETH on <span> Ethereum</span>
       </h1>
       <Ui chain="ethereum" />
+      <div className="hidden">
+        {SUPPORTED_CHAINS.map((chain) => {
+          return (
+            <Link href={`/${CHAIN_IDS[chain.id]}`} key={chain.id}>
+              {chain.name}
+            </Link>
+          );
+        })}
+      </div>
     </main>
   );
 }
