@@ -2,11 +2,9 @@ import { Address, http } from "viem";
 import {
   aurora,
   avalanche,
-  base,
   blast,
   bsc,
   canto,
-  degen,
   fantom,
   filecoin,
   fuse,
@@ -32,8 +30,6 @@ export const WETH_MAINNET_ADDRESS: Address =
   "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2";
 export const WETH_OP_ADDRESS: Address =
   "0x4200000000000000000000000000000000000006";
-export const WETH_BASE_ADDRESS: Address =
-  "0x4200000000000000000000000000000000000006";
 export const WETH_ZORA_ADDRESS: Address =
   "0x4200000000000000000000000000000000000006";
 export const WETH_SCROLL_ADDRESS: Address =
@@ -44,8 +40,6 @@ export const WAVAX_AVAX_ADDRESS: Address =
   "0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7";
 export const WBNB_BSC_ADDRESS: Address =
   "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c";
-export const WDEGEN_DEGEN_ADDRESS: Address =
-  "0xEb54dACB4C2ccb64F8074eceEa33b5eBb38E5387";
 export const WFIL_FILECOIN_ADDRESS: Address =
   "0x60E1773636CF5E4A227d9AC24F20fEca034ee25A";
 export const WFTM_FANTOM_ADDRESS: Address =
@@ -81,9 +75,7 @@ export const WETH_ADDRESSES: Record<number, Address> = {
   [optimism.id]: WETH_OP_ADDRESS,
   [polygon.id]: WMATIC_POLYGON_ADDRESS,
   [avalanche.id]: WAVAX_AVAX_ADDRESS,
-  [base.id]: WETH_BASE_ADDRESS,
   [bsc.id]: WBNB_BSC_ADDRESS,
-  [degen.id]: WDEGEN_DEGEN_ADDRESS,
   [filecoin.id]: WFIL_FILECOIN_ADDRESS,
   [fantom.id]: WFTM_FANTOM_ADDRESS,
   [fuse.id]: WFUSE_FUSE_ADDRESS,
@@ -108,9 +100,7 @@ export const SUPPORTED_CHAINS = [
   optimism,
   polygon,
   avalanche,
-  base,
   bsc,
-  degen,
   filecoin,
   fuse,
   fantom,
@@ -135,10 +125,8 @@ export const SUPPORTED_CHAIN_IDS = SUPPORTED_CHAINS.map(
 
 export const LOGOS: Record<number, string> = {
   [avalanche.id]: "https://icons.llamao.fi/icons/chains/rsz_avalanche.jpg",
-  [base.id]: "https://icons.llamao.fi/icons/chains/rsz_base.jpg",
   [blast.id]: "https://icons.llamao.fi/icons/chains/rsz_blast.jpg",
   [bsc.id]: "https://icons.llamao.fi/icons/chains/rsz_bsc.jpg",
-  [degen.id]: "https://icons.llamao.fi/icons/chains/rsz_degen.jpg",
   [mainnet.id]: "https://icons.llamao.fi/icons/chains/rsz_ethereum.jpg",
   [optimism.id]: "https://icons.llamao.fi/icons/chains/rsz_optimism.jpg",
   [polygon.id]: "https://icons.llamao.fi/icons/chains/rsz_polygon.jpg",
@@ -166,9 +154,7 @@ export const SYMBOLS: Record<number, string> = {
   [optimism.id]: optimism.nativeCurrency.symbol,
   [polygon.id]: polygon.nativeCurrency.symbol,
   [avalanche.id]: avalanche.nativeCurrency.symbol,
-  [base.id]: base.nativeCurrency.symbol,
   [bsc.id]: bsc.nativeCurrency.symbol,
-  [degen.id]: degen.nativeCurrency.symbol,
   [filecoin.id]: filecoin.nativeCurrency.symbol,
   [fuse.id]: fuse.nativeCurrency.symbol,
   [fantom.id]: fantom.nativeCurrency.symbol,
@@ -189,10 +175,8 @@ export const SYMBOLS: Record<number, string> = {
 
 export const NAMES: Record<number, string> = {
   [blast.id]: blast.name,
-  [base.id]: base.name,
   [polygon.id]: polygon.name,
   [bsc.id]: bsc.name,
-  [degen.id]: degen.name,
   [mainnet.id]: mainnet.name,
   [optimism.id]: optimism.name,
   [avalanche.id]: avalanche.name,
@@ -216,10 +200,8 @@ export const NAMES: Record<number, string> = {
 
 export const CHAIN_IDS: Record<number, string> = {
   [blast.id]: "blast",
-  [base.id]: "base",
   [polygon.id]: "polygon",
   [bsc.id]: "bsc",
-  [degen.id]: "degen",
   [mainnet.id]: "ethereum",
   [optimism.id]: "optimism",
   [avalanche.id]: "avalanche",
@@ -243,10 +225,8 @@ export const CHAIN_IDS: Record<number, string> = {
 
 export const CHAINS: Record<string, any> = {
   blast: blast,
-  base: base,
   polygon: polygon,
   bsc: bsc,
-  degen: degen,
   ethereum: mainnet,
   optimism: optimism,
   avalanche: avalanche,
@@ -270,10 +250,8 @@ export const CHAINS: Record<string, any> = {
 
 export const IDS: Record<string, number> = {
   blast: blast.id,
-  base: base.id,
   polygon: polygon.id,
   bsc: bsc.id,
-  degen: degen.id,
   ethereum: mainnet.id,
   optimism: optimism.id,
   avalanche: avalanche.id,
@@ -297,10 +275,8 @@ export const IDS: Record<string, number> = {
 
 export const RPCS = {
   [avalanche.id]: http("https://avalanche.drpc.org"),
-  [base.id]: http("https://base-rpc.publicnode.com"),
   [blast.id]: http("https://rpc.blast.io"),
   [bsc.id]: http("https://bsc-rpc.publicnode.com"),
-  [degen.id]: http("https://rpc.degen.tips"),
   [mainnet.id]: http(`https://ethereum-rpc.publicnode.com`),
   [optimism.id]: http("https://optimism-rpc.publicnode.com"),
   [polygon.id]: http("https://polygon-bor-rpc.publicnode.com"),
@@ -348,8 +324,6 @@ export const BASE_METADATA = {
     "avalanche",
     "avax",
     "wavax",
-    "degen",
-    "wdegen",
     "chain",
     "avax",
     "wavax",
