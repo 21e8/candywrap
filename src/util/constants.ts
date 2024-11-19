@@ -13,6 +13,7 @@ import {
   mainnet,
   metis,
   optimism,
+  base,
   polygon,
   scroll,
   zora,
@@ -24,6 +25,8 @@ import {
   boba,
 } from "viem/chains";
 
+export const WETH_BASE_ADDRESS: Address =
+  "0x4200000000000000000000000000000000000006";
 export const WETH_BLAST_ADDRESS: Address =
   "0x4300000000000000000000000000000000000004";
 export const WETH_MAINNET_ADDRESS: Address =
@@ -73,6 +76,7 @@ export const WETH_ADDRESSES: Record<number, Address> = {
   [mainnet.id]: WETH_MAINNET_ADDRESS,
   [blast.id]: WETH_BLAST_ADDRESS,
   [optimism.id]: WETH_OP_ADDRESS,
+  [base.id]: WETH_BASE_ADDRESS,
   [polygon.id]: WMATIC_POLYGON_ADDRESS,
   [avalanche.id]: WAVAX_AVAX_ADDRESS,
   [bsc.id]: WBNB_BSC_ADDRESS,
@@ -105,6 +109,7 @@ export const SUPPORTED_CHAINS = [
   fuse,
   fantom,
   zora,
+  base,
   scroll,
   aurora,
   canto,
@@ -130,6 +135,7 @@ export const LOGOS: Record<number, string> = {
   [mainnet.id]: "https://icons.llamao.fi/icons/chains/rsz_ethereum.jpg",
   [optimism.id]: "https://icons.llamao.fi/icons/chains/rsz_optimism.jpg",
   [polygon.id]: "https://icons.llamao.fi/icons/chains/rsz_polygon.jpg",
+  [base.id]: "https://icons.llamao.fi/icons/chains/rsz_base.jpg",
   [polygonZkEvm.id]: "https://icons.llamao.fi/icons/chains/rsz_polygon.jpg",
   [filecoin.id]: "https://icons.llamao.fi/icons/chains/rsz_filecoin.jpg",
   [fuse.id]: "https://icons.llamao.fi/icons/chains/rsz_fuse.jpg",
@@ -160,6 +166,7 @@ export const SYMBOLS: Record<number, string> = {
   [fantom.id]: fantom.nativeCurrency.symbol,
   [zora.id]: zora.nativeCurrency.symbol,
   [scroll.id]: scroll.nativeCurrency.symbol,
+  [base.id]: base.nativeCurrency.symbol,
   [aurora.id]: aurora.nativeCurrency.symbol,
   [canto.id]: canto.nativeCurrency.symbol,
   [harmony.id]: harmony.nativeCurrency.symbol,
@@ -184,6 +191,7 @@ export const NAMES: Record<number, string> = {
   [fuse.id]: fuse.name,
   [fantom.id]: fantom.name,
   [zora.id]: zora.name,
+  [base.id]: base.name,
   [scroll.id]: scroll.name,
   [aurora.id]: aurora.name,
   [canto.id]: canto.name,
@@ -208,6 +216,7 @@ export const CHAIN_IDS: Record<number, string> = {
   [filecoin.id]: "filecoin",
   [fuse.id]: "fuse",
   [fantom.id]: "fantom",
+  [base.id]: "base",
   [zora.id]: "zora",
   [scroll.id]: "scroll",
   [aurora.id]: "aurora",
@@ -232,6 +241,7 @@ export const CHAINS: Record<string, any> = {
   avalanche: avalanche,
   filecoin: filecoin,
   fuse: fuse,
+  base: base,
   fantom: fantom,
   zora: zora,
   scroll: scroll,
@@ -259,6 +269,7 @@ export const IDS: Record<string, number> = {
   fuse: fuse.id,
   fantom: fantom.id,
   zora: zora.id,
+  base: base.id,
   scroll: scroll.id,
   aurora: aurora.id,
   cantor: canto.id,
@@ -284,6 +295,7 @@ export const RPCS = {
   [fuse.id]: http("https://fuse.drpc.org"),
   [fantom.id]: http("https://rpc3.fantom.network"),
   [zora.id]: http("https://rpc.zora.energy"),
+  [base.id]: http("https://base.llamarpc.com"),
   [scroll.id]: http("https://scroll.drpc.org"),
   [aurora.id]: http("https://1rpc.io/aurora	"),
   [canto.id]: http("https://canto-rpc.ansybl.io"),
@@ -340,6 +352,7 @@ export const BASE_METADATA = {
     "fil",
     "wfil",
     "zora",
+    "base",
     "scroll",
     "evm",
     "wan",
