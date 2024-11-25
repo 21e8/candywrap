@@ -157,7 +157,7 @@ export const LOGOS: Record<number, string> = {
   [zkSync.id]: "/logos/zksync.png",
   [wanchain.id]: "https://icons.llamao.fi/icons/chains/rsz_wanchain.jpg",
   [boba.id]: "https://icons.llamao.fi/icons/chains/rsz_boba.jpg",
-  [degen.id]: "/logos/degen.png",
+  [degen.id]: "https://assets.coingecko.com/coins/images/36809/small/wdegen.jpeg?1712546442",
 };
 
 export const SYMBOLS: Record<number, string> = {
