@@ -23,8 +23,11 @@ import {
   zkSync,
   wanchain,
   boba,
+  degen,
 } from "viem/chains";
 
+export const WDEGEN_DEGEN_ADDRESS: Address =
+  "0xEb54dACB4C2ccb64F8074eceEa33b5eBb38E5387";
 export const WETH_BASE_ADDRESS: Address =
   "0x4200000000000000000000000000000000000006";
 export const WETH_BLAST_ADDRESS: Address =
@@ -73,6 +76,7 @@ export const WETH_BOBA_ADDRESS: Address =
   "0xDeadDeAddeAddEAddeadDEaDDEAdDeaDDeAD0000";
 
 export const WETH_ADDRESSES: Record<number, Address> = {
+  [degen.id]: WDEGEN_DEGEN_ADDRESS,
   [mainnet.id]: WETH_MAINNET_ADDRESS,
   [blast.id]: WETH_BLAST_ADDRESS,
   [optimism.id]: WETH_OP_ADDRESS,
@@ -115,6 +119,7 @@ export const SUPPORTED_CHAINS = [
   canto,
   harmony,
   linea,
+  degen,
   metis,
   moonbeam,
   moonriver,
@@ -152,6 +157,7 @@ export const LOGOS: Record<number, string> = {
   [zkSync.id]: "/logos/zksync.png",
   [wanchain.id]: "https://icons.llamao.fi/icons/chains/rsz_wanchain.jpg",
   [boba.id]: "https://icons.llamao.fi/icons/chains/rsz_boba.jpg",
+  [degen.id]: "/logos/degen.png",
 };
 
 export const SYMBOLS: Record<number, string> = {
@@ -178,6 +184,7 @@ export const SYMBOLS: Record<number, string> = {
   [zkSync.id]: zkSync.nativeCurrency.symbol,
   [wanchain.id]: wanchain.nativeCurrency.symbol,
   [boba.id]: "ETH",
+  [degen.id]: degen.nativeCurrency.symbol,
 };
 
 export const NAMES: Record<number, string> = {
@@ -204,6 +211,7 @@ export const NAMES: Record<number, string> = {
   [zkSync.id]: zkSync.name,
   [wanchain.id]: wanchain.name,
   [boba.id]: boba.name,
+  [degen.id]: degen.name,
 };
 
 export const CHAIN_IDS: Record<number, string> = {
@@ -230,6 +238,7 @@ export const CHAIN_IDS: Record<number, string> = {
   [zkSync.id]: "zkSync",
   [wanchain.id]: "wanchain",
   [boba.id]: "boba",
+  [degen.id]: "degen",
 };
 
 export const CHAINS: Record<string, any> = {
@@ -246,6 +255,7 @@ export const CHAINS: Record<string, any> = {
   zora: zora,
   scroll: scroll,
   aurora: aurora,
+  degen: degen,
   canto: canto,
   harmony: harmony,
   linea: linea,
@@ -272,7 +282,8 @@ export const IDS: Record<string, number> = {
   base: base.id,
   scroll: scroll.id,
   aurora: aurora.id,
-  cantor: canto.id,
+  degen: degen.id,
+  canto: canto.id,
   harmony: harmony.id,
   linea: linea.id,
   metis: metis.id,
@@ -299,6 +310,7 @@ export const RPCS = {
   [scroll.id]: http("https://scroll.drpc.org"),
   [aurora.id]: http("https://1rpc.io/aurora	"),
   [canto.id]: http("https://canto-rpc.ansybl.io"),
+  [degen.id]: http("https://rpc.degen.tips"),
   [harmony.id]: http("https://1rpc.io/one	"),
   [linea.id]: http("https://linea.drpc.org"),
   [metis.id]: http("https://metis.drpc.org"),
