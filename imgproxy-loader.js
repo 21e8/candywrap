@@ -25,6 +25,12 @@ function generateSignature(key, salt, url) {
 
 let proxyMap = new Map();
 export default function imgproxyLoader({ src, width, quality }) {
+  if (src.endsWith(".svg")) {
+    return src;
+  }
+  if (src.endsWith(".webp")) {
+    return src;
+  }
   // Example usage:
   const key = process.env.IMGPROXY_KEY;
   const salt = process.env.IMGPROXY_SALT;
