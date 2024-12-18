@@ -48,7 +48,7 @@ export default function imgproxyLoader({ src, width, quality }) {
     if (process.env.NODE_ENV === "development") {
       return src;
     } else {
-      src = `https://beta.validatorbase.com${src}`;
+      src = `https://candywrap.dev${src}`;
     }
   }
   const baseUrl = "https://imgproxy.validatorbase.com";
