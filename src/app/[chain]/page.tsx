@@ -1,9 +1,18 @@
+import { redirect } from "next/navigation";
 import Ui from "../../components/ui";
 import { CHAINS, IDS, SYMBOLS } from "../../util/constants";
 import { Logo } from "@/components/logo";
 
 export default function Home({ params }: { params: { chain: string } }) {
   const actualSymbol = SYMBOLS[IDS[params.chain]] || "ETH";
+  if (params.chain === "mainnet") {
+    return redirect("/ethereum");
+  }
+
+  if (!params.chain) {
+    return redirect("/ethereum");
+  }
+  
   return (
     <>
       <div className="my-12 lg:mx-12 text-secondary max-w-xl">

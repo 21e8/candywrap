@@ -1,23 +1,20 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: "export",
   images: {
-    domains: ["*"],
+    loader: "custom",
+    loaderFile: "./imgproxy-loader.js",
+    dangerouslyAllowSVG: true,
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "*",
+      },
+    ],
   },
-  // distDir: "build",
-  // output: 'export',
-  redirects: async () => {
-    return [
-      {
-        source: "/mainnet",
-        destination: "/ethereum",
-        permanent: true,
-      },
-      {
-        source: "/",
-        destination: "/ethereum",
-        permanent: true,
-      },
-    ];
+  env: {
+    IMGPROXY_KEY: process.env.IMGPROXY_KEY,
+    IMGPROXY_SALT: process.env.IMGPROXY_SALT,
   },
 };
 
