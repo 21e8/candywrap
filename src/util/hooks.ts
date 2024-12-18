@@ -8,7 +8,6 @@ import {
 } from "wagmi";
 import { SUPPORTED_CHAIN_IDS, WETH_ADDRESSES } from "./constants";
 import { useEffect, useRef } from "react";
-import { TypedContractRead } from "@/types/typed-contract-read";
 import { WRAP_ABI } from "./abi";
 
 export function useWriteUnwrapWeth({ amountWei }: { amountWei: bigint }) {
@@ -122,7 +121,7 @@ export const useWethBalance = () => {
       refetchInterval: 15000,
       retry: 0,
     },
-  }) as TypedContractRead<bigint>;
+  });
 };
 
 export const useOutsideClick = (callback: Function) => {
