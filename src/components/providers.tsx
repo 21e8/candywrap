@@ -4,6 +4,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ConnectKitProvider, getDefaultConfig } from "connectkit";
 import { RPCS, SUPPORTED_CHAINS } from "../util/constants";
 import { ToastProvider } from "../context/toast-provider";
+import { Bootstrap } from "@/context/bootstrap";
 
 const queryClient = new QueryClient();
 
@@ -33,6 +34,7 @@ export const Providers = ({ children }: { children: React.ReactNode }) => {
       <WagmiProvider config={config}>
         <QueryClientProvider client={queryClient}>
           <ConnectKitProvider>{children}</ConnectKitProvider>
+          <Bootstrap />
         </QueryClientProvider>
       </WagmiProvider>
     </ToastProvider>
