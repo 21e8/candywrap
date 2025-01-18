@@ -1,54 +1,42 @@
 import crypto from "crypto";
-// import dotenv from "dotenv";
-
-// dotenv.config();
-
-function generateSignature(key, salt, url) {
+function generateSignature(key, salt, url, width, height, quality) {
   const keyBin = Buffer.from(key, "hex");
   const saltBin = Buffer.from(salt, "hex");
-
-  const path = `/resize:fit:300:200/plain/${url}`;
+  const encodedUrl = encodeURIComponent(url); // Encode URL before signature
+  const path = `/resize:fit:${width}:${height || 0}/quality:${
+    quality || 75
+  }/plain/${encodedUrl}`; // Use encoded URL in path
 
   const hmac = crypto.createHmac("sha256", keyBin);
   hmac.update(saltBin);
   hmac.update(path);
 
-  // Use regular base64 and make it URL-safe
-  const signature = hmac
+  return hmac
     .digest("base64")
     .replace(/\+/g, "-")
     .replace(/\//g, "_")
     .replace(/=+$/, "");
-
-  return signature;
 }
 
-let proxyMap = new Map();
-export default function imgproxyLoader({ src, width, quality }) {
-  if (src.endsWith(".svg")) {
-    return src;
-  }
-  if (src.endsWith(".webp")) {
-    return src;
-  }
-  // Example usage:
+export default function imgproxyLoader({ src, width, height, quality }) {
   const key = process.env.IMGPROXY_KEY;
   const salt = process.env.IMGPROXY_SALT;
+  const enabled = process.env.IMGPROXY_ENABLED;
+  if (enabled !== "true") {
+    return src;
+  }
 
   if (!key || !salt) {
     console.log(JSON.stringify(JSON.stringify(process.env)));
     throw new Error("IMGPROXY_KEY or IMGPROXY_SALT is not set");
   }
 
-  if (proxyMap.has(src)) {
-    return proxyMap.get(src);
-  }
   const isHttps = src.startsWith("https://") || src.startsWith("http://");
   if (!isHttps) {
     if (process.env.NODE_ENV === "development") {
       return src;
     } else {
-      src = `https://candywrap.dev${src}`;
+      src = `https://beta.validatorbase.com${src}`;
     }
   }
   const baseUrl = "https://imgproxy.validatorbase.com";
@@ -56,8 +44,12 @@ export default function imgproxyLoader({ src, width, quality }) {
   const proxyUrl = `${baseUrl}/${generateSignature(
     key,
     salt,
-    src
-  )}/resize:fit:${width}:0/quality:${quality || 75}/plain/${encodedUrl}`;
-  proxyMap.set(src, proxyUrl);
+    src,
+    width,
+    height,
+    quality
+  )}/resize:fit:${width}:${height || 0}/quality:${
+    quality || 75
+  }/plain/${encodedUrl}`;
   return proxyUrl;
 }
